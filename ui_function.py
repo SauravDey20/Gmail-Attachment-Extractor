@@ -1,7 +1,7 @@
 from asyncio.windows_events import NULL
 from concurrent.futures import thread
 from pickle import NONE
-from demo import *  # IMPORTING THE MAIN.PY FILE
+from main import *  # IMPORTING THE MAIN.PY FILE
 
 from about import *
 
