@@ -29,6 +29,7 @@ class Ui_MainWindow(object):
         self.frame_top = QFrame(self.centralwidget)
         self.frame_top.setObjectName(u"frame_top")
         self.frame_top.setMaximumSize(QSize(16777215, 55))
+        self.frame_top.setStyleSheet(u"")
         self.frame_top.setFrameShape(QFrame.NoFrame)
         self.frame_top.setFrameShadow(QFrame.Plain)
         self.horizontalLayout = QHBoxLayout(self.frame_top)
@@ -74,7 +75,7 @@ class Ui_MainWindow(object):
         self.frame_top_east = QFrame(self.frame_top)
         self.frame_top_east.setObjectName(u"frame_top_east")
         self.frame_top_east.setMaximumSize(QSize(16777215, 55))
-        self.frame_top_east.setStyleSheet(u"background:rgb(51,51,51);")
+        self.frame_top_east.setStyleSheet(u"background:rgb(0, 0, 0);")
         self.frame_top_east.setFrameShape(QFrame.NoFrame)
         self.frame_top_east.setFrameShadow(QFrame.Plain)
         self.horizontalLayout_4 = QHBoxLayout(self.frame_top_east)
@@ -263,7 +264,7 @@ class Ui_MainWindow(object):
         self.frame_bottom_west.setObjectName(u"frame_bottom_west")
         self.frame_bottom_west.setMinimumSize(QSize(80, 0))
         self.frame_bottom_west.setMaximumSize(QSize(80, 16777215))
-        self.frame_bottom_west.setStyleSheet(u"background:rgb(51,51,51);")
+        self.frame_bottom_west.setStyleSheet(u"background:rgb(0, 0, 0);")
         self.frame_bottom_west.setFrameShape(QFrame.NoFrame)
         self.frame_bottom_west.setFrameShadow(QFrame.Plain)
         self.verticalLayout_3 = QVBoxLayout(self.frame_bottom_west)
@@ -446,13 +447,14 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet(u"")
         self.page_home = QWidget()
         self.page_home.setObjectName(u"page_home")
-        self.page_home.setStyleSheet(u"background:rgb(91,90,90);")
+        self.page_home.setStyleSheet(u"background:rgb(74, 200, 175)")
         self.horizontalLayout_19 = QHBoxLayout(self.page_home)
         self.horizontalLayout_19.setSpacing(0)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.horizontalLayout_19.setContentsMargins(0, 5, 0, 5)
         self.frame_home_main = QFrame(self.page_home)
         self.frame_home_main.setObjectName(u"frame_home_main")
+        self.frame_home_main.setStyleSheet(u"background:reg(#008B6D);")
         self.frame_home_main.setFrameShape(QFrame.NoFrame)
         self.frame_home_main.setFrameShadow(QFrame.Plain)
         self.verticalLayout_5 = QVBoxLayout(self.frame_home_main)
@@ -468,7 +470,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(24)
         self.lab_home_main_hed.setFont(font1)
         self.lab_home_main_hed.setStyleSheet(u"QLabel {\n"
-"	color:rgb(255,255,255);\n"
+"	color:rgb(0, 0, 0);\n"
 "}")
         self.lab_home_main_hed.setTextFormat(Qt.RichText)
 
@@ -486,7 +488,7 @@ class Ui_MainWindow(object):
         font2.setFamily(u"Segoe UI")
         font2.setPointSize(10)
         self.lab_home_main_disc.setFont(font2)
-        self.lab_home_main_disc.setStyleSheet(u"color:rgb(255,255,255);")
+        self.lab_home_main_disc.setStyleSheet(u"color:rgb(0 ,0 ,0);")
         self.lab_home_main_disc.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.lab_home_main_disc.setWordWrap(True)
         self.lab_home_main_disc.setMargin(5)
@@ -509,43 +511,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_19.addWidget(self.vert_divide)
 
-        self.frame_home_stat = QFrame(self.page_home)
-        self.frame_home_stat.setObjectName(u"frame_home_stat")
-        self.frame_home_stat.setMinimumSize(QSize(220, 0))
-        self.frame_home_stat.setMaximumSize(QSize(220, 16777215))
-        self.frame_home_stat.setFrameShape(QFrame.NoFrame)
-        self.frame_home_stat.setFrameShadow(QFrame.Plain)
-        self.verticalLayout_6 = QVBoxLayout(self.frame_home_stat)
-        self.verticalLayout_6.setSpacing(5)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(5, 5, 5, 5)
-        self.lab_home_stat_hed = QLabel(self.frame_home_stat)
-        self.lab_home_stat_hed.setObjectName(u"lab_home_stat_hed")
-        self.lab_home_stat_hed.setMinimumSize(QSize(0, 55))
-        self.lab_home_stat_hed.setMaximumSize(QSize(16777215, 55))
-        self.lab_home_stat_hed.setFont(font1)
-        self.lab_home_stat_hed.setStyleSheet(u"QLabel {\n"
-"	color:rgb(255,255,255);\n"
-"}")
-        self.lab_home_stat_hed.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.verticalLayout_6.addWidget(self.lab_home_stat_hed)
-
-        self.lab_home_stat_disc = QLabel(self.frame_home_stat)
-        self.lab_home_stat_disc.setObjectName(u"lab_home_stat_disc")
-        self.lab_home_stat_disc.setFont(font2)
-        self.lab_home_stat_disc.setAutoFillBackground(False)
-        self.lab_home_stat_disc.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-
-        self.verticalLayout_6.addWidget(self.lab_home_stat_disc)
-
-
-        self.horizontalLayout_19.addWidget(self.frame_home_stat)
-
         self.stackedWidget.addWidget(self.page_home)
         self.home_after_login = QWidget()
         self.home_after_login.setObjectName(u"home_after_login")
-        self.home_after_login.setStyleSheet(u"background:rgb(91,90,90);")
+        self.home_after_login.setStyleSheet(u"background:rgb(74, 200, 175)")
         self.verticalLayout_13 = QVBoxLayout(self.home_after_login)
         self.verticalLayout_13.setSpacing(5)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
@@ -558,12 +527,13 @@ class Ui_MainWindow(object):
         font3.setFamily(u"Segoe UI")
         font3.setPointSize(24)
         self.lab_about_home.setFont(font3)
-        self.lab_about_home.setStyleSheet(u"color:rgb(255,255,255);")
+        self.lab_about_home.setStyleSheet(u"color:rgb(0 ,0 ,0);")
 
         self.verticalLayout_13.addWidget(self.lab_about_home)
 
         self.frame_about_home = QFrame(self.home_after_login)
         self.frame_about_home.setObjectName(u"frame_about_home")
+        self.frame_about_home.setStyleSheet(u"color:rgb(0 ,0 ,0);")
         self.frame_about_home.setFrameShape(QFrame.StyledPanel)
         self.frame_about_home.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_28 = QHBoxLayout(self.frame_about_home)
@@ -574,30 +544,6 @@ class Ui_MainWindow(object):
         self.logout.setObjectName(u"logout")
 
         self.horizontalLayout_28.addWidget(self.logout)
-
-        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_28.addItem(self.horizontalSpacer_8)
-
-        self.vsb_about_home = QScrollBar(self.frame_about_home)
-        self.vsb_about_home.setObjectName(u"vsb_about_home")
-        self.vsb_about_home.setStyleSheet(u"QScrollBar:vertical {\n"
-"	background:rgb(51,51,51);\n"
-"    width:20px;\n"
-"    margin: 0px 0px 0px 0px;\n"
-"}\n"
-"QScrollBar::handle:vertical {\n"
-"    background:rgb(0,143,170);\n"
-"}\n"
-"QScrollBar::add-page:vertical {\n"
-" 	background:rgb(51,51,51);\n"
-"}\n"
-"QScrollBar::sub-page:vertical {\n"
-" 	background:rgb(51,51,51);\n"
-"}")
-        self.vsb_about_home.setOrientation(Qt.Vertical)
-
-        self.horizontalLayout_28.addWidget(self.vsb_about_home)
 
 
         self.verticalLayout_13.addWidget(self.frame_about_home)
@@ -630,7 +576,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_about_bug)
         self.page_bug = QWidget()
         self.page_bug.setObjectName(u"page_bug")
-        self.page_bug.setStyleSheet(u"background:rgb(91,90,90);")
+        self.page_bug.setStyleSheet(u"background:rgb(74, 200, 175)")
         self.verticalLayout_7 = QVBoxLayout(self.page_bug)
         self.verticalLayout_7.setSpacing(5)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
@@ -641,12 +587,14 @@ class Ui_MainWindow(object):
         self.lab_Bug.setMinimumSize(QSize(0, 55))
         self.lab_Bug.setMaximumSize(QSize(16777215, 55))
         self.lab_Bug.setFont(font1)
-        self.lab_Bug.setStyleSheet(u"color:rgb(255,255,255);")
+        self.lab_Bug.setStyleSheet(u"color:rgb(0, 0, 0);")
 
         self.verticalLayout_7.addWidget(self.lab_Bug)
 
         self.email_from = QLineEdit(self.page_bug)
         self.email_from.setObjectName(u"email_from")
+        self.email_from.setEnabled(True)
+        self.email_from.setMinimumSize(QSize(969, 0))
         self.email_from.setAutoFillBackground(False)
 
         self.verticalLayout_7.addWidget(self.email_from)
@@ -1908,8 +1856,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(5)
-        self.stackedWidget_android.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget_android.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1957,8 +1905,6 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:10pt;\">This App will download G-Mail Attachments for you. But first, you need to login through your google account</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:10pt;\"><br /></p></body></html>", None))
         self.loginButton.setText(QCoreApplication.translate("MainWindow", u"Google Login", None))
-        self.lab_home_stat_hed.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Stat </span></p></body></html>", None))
-        self.lab_home_stat_disc.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Weather: Rainy<br/>Skys: Cloudy<br/>Wind: blowing Fast<br/>Temperature: 32 Degree Celcious</span></p></body></html>", None))
         self.lab_about_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.logout.setText(QCoreApplication.translate("MainWindow", u"Click to Logout", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Empty", None))

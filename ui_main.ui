@@ -47,6 +47,9 @@
         <height>55</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -164,7 +167,7 @@ QPushButton:pressed {
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background:rgb(51,51,51);</string>
+          <string notr="true">background:rgb(0, 0, 0);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -623,7 +626,7 @@ QPushButton:pressed {
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background:rgb(51,51,51);</string>
+          <string notr="true">background:rgb(0, 0, 0);</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -1081,11 +1084,11 @@ QPushButton:pressed {
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>5</number>
+                <number>7</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="styleSheet">
-                 <string notr="true">background:rgb(91,90,90);</string>
+                 <string notr="true">background:rgb(74, 200, 175)</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_19">
                  <property name="spacing">
@@ -1105,6 +1108,9 @@ QPushButton:pressed {
                  </property>
                  <item>
                   <widget class="QFrame" name="frame_home_main">
+                   <property name="styleSheet">
+                    <string notr="true">background:reg(#008B6D);</string>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::NoFrame</enum>
                    </property>
@@ -1149,7 +1155,7 @@ QPushButton:pressed {
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QLabel {
-	color:rgb(255,255,255);
+	color:rgb(0, 0, 0);
 }</string>
                       </property>
                       <property name="text">
@@ -1178,7 +1184,7 @@ QPushButton:pressed {
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
+                       <string notr="true">color:rgb(0 ,0 ,0);</string>
                       </property>
                       <property name="text">
                        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1222,102 +1228,11 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item>
-                  <widget class="QFrame" name="frame_home_stat">
-                   <property name="minimumSize">
-                    <size>
-                     <width>220</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>220</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_6">
-                    <property name="spacing">
-                     <number>5</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>5</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>5</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>5</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>5</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="lab_home_stat_hed">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>55</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>55</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI Semilight</family>
-                        <pointsize>24</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLabel {
-	color:rgb(255,255,255);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Stat &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="lab_home_stat_disc">
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="autoFillBackground">
-                       <bool>false</bool>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Weather: Rainy&lt;br/&gt;Skys: Cloudy&lt;br/&gt;Wind: blowing Fast&lt;br/&gt;Temperature: 32 Degree Celcious&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
                 </layout>
                </widget>
                <widget class="QWidget" name="home_after_login">
                 <property name="styleSheet">
-                 <string notr="true">background:rgb(91,90,90);</string>
+                 <string notr="true">background:rgb(74, 200, 175)</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_13">
                  <property name="spacing">
@@ -1356,7 +1271,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color:rgb(255,255,255);</string>
+                    <string notr="true">color:rgb(0 ,0 ,0);</string>
                    </property>
                    <property name="text">
                     <string>Home</string>
@@ -1365,6 +1280,9 @@ p, li { white-space: pre-wrap; }
                  </item>
                  <item>
                   <widget class="QFrame" name="frame_about_home">
+                   <property name="styleSheet">
+                    <string notr="true">color:rgb(0 ,0 ,0);</string>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
@@ -1391,42 +1309,6 @@ p, li { white-space: pre-wrap; }
                      <widget class="QPushButton" name="logout">
                       <property name="text">
                        <string>Click to Logout</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <spacer name="horizontalSpacer_8">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>40</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                    <item>
-                     <widget class="QScrollBar" name="vsb_about_home">
-                      <property name="styleSheet">
-                       <string notr="true">QScrollBar:vertical {
-	background:rgb(51,51,51);
-    width:20px;
-    margin: 0px 0px 0px 0px;
-}
-QScrollBar::handle:vertical {
-    background:rgb(0,143,170);
-}
-QScrollBar::add-page:vertical {
- 	background:rgb(51,51,51);
-}
-QScrollBar::sub-page:vertical {
- 	background:rgb(51,51,51);
-}</string>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
                       </property>
                      </widget>
                     </item>
@@ -1473,7 +1355,7 @@ QScrollBar::sub-page:vertical {
                </widget>
                <widget class="QWidget" name="page_bug">
                 <property name="styleSheet">
-                 <string notr="true">background:rgb(91,90,90);</string>
+                 <string notr="true">background:rgb(74, 200, 175)</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_7">
                  <property name="spacing">
@@ -1515,7 +1397,7 @@ QScrollBar::sub-page:vertical {
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color:rgb(255,255,255);</string>
+                    <string notr="true">color:rgb(0, 0, 0);</string>
                    </property>
                    <property name="text">
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Download e-mails&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1524,6 +1406,15 @@ QScrollBar::sub-page:vertical {
                  </item>
                  <item>
                   <widget class="QLineEdit" name="email_from">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>969</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="autoFillBackground">
                     <bool>false</bool>
                    </property>
@@ -2421,7 +2312,7 @@ QPushButton:pressed {
                     <string notr="true">background:rgb(91,90,90);</string>
                    </property>
                    <property name="currentIndex">
-                    <number>2</number>
+                    <number>3</number>
                    </property>
                    <widget class="QWidget" name="page_android_contact">
                     <property name="styleSheet">

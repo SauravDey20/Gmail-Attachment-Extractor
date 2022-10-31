@@ -240,7 +240,6 @@ class UIFunction(MainWindow):
     def stackPage(self):
 
         self.ui.lab_home_main_hed.setText("About the Application")
-        self.ui.lab_home_stat_hed.setText("Stat")
 
         # self.ui.loginButton.clicked.connect(lambda: APFunction.login(self))
 
@@ -260,10 +259,6 @@ class UIFunction(MainWindow):
 
         self.ui.choose_directory.clicked.connect(
             lambda: choose_directory())
-
-        # self.ui.applyFilters.clicked.connect(
-        #     lambda: UIFunction.getFilters(self)
-        # )
 
         self.ui.applyFilters.clicked.connect(
             lambda: filters(
