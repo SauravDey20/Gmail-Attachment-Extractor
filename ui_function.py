@@ -200,19 +200,22 @@ class UIFunction(MainWindow):
                 self.ui.frame_bug.setStyleSheet("background:rgb(91,90,90)")
 
         elif buttonName == 'bn_android':
-            if self.ui.frame_bottom_west.width() == 80 and index != 7:
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_android)
-                self.ui.lab_tab.setText("Android")
-                # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
-                UIFunction.androidStackPages(self, "page_contact")
+            if(login_status==0):
+                self.dialogexec("Warning", "Please Login to access this feature.", "icons/1x/errorAsset 55.png")
+            else:
+                if self.ui.frame_bottom_west.width() == 80 and index != 7:
+                    self.ui.stackedWidget.setCurrentWidget(self.ui.page_download)
+                    self.ui.lab_tab.setText("Android")
+                    # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
+                    self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
+                    UIFunction.androidStackPages(self, "page_contact")
 
-            elif self.ui.frame_bottom_west.width() == 160 and index != 3:   # ABOUT PAGE STACKED WIDGET
-                self.ui.stackedWidget.setCurrentWidget(
-                    self.ui.page_about_android)
-                self.ui.lab_tab.setText("About > Android")
-                # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
+                elif self.ui.frame_bottom_west.width() == 160 and index != 3:   # ABOUT PAGE STACKED WIDGET
+                    self.ui.stackedWidget.setCurrentWidget(
+                        self.ui.page_about_android)
+                    self.ui.lab_tab.setText("About > Android")
+                    # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
+                    self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
 
         elif buttonName == 'bn_cloud':
             if self.ui.frame_bottom_west.width() == 80 and index != 6:
@@ -264,7 +267,7 @@ class UIFunction(MainWindow):
             lambda: filters(
                 self.ui.email_from.text(),
                 self.ui.domain.text(),
-                self.ui.date.text(),
+                self.ui.date_from.text(),
                 self.ui.unread.isChecked(), 
                 self.ui.localStorage.isChecked(), 
                 self.ui.gDrive.isChecked()
@@ -277,17 +280,23 @@ class UIFunction(MainWindow):
         # self.ui.bn_cloud_clear.clicked.connect(
         #     lambda: APFunction.cloudClear(self))
 
-        self.ui.bn_android_contact.clicked.connect(
-            lambda: UIFunction.androidStackPages(self, "page_contact"))
-        self.ui.bn_android_game.clicked.connect(
-            lambda: UIFunction.androidStackPages(self, "page_game"))
-        self.ui.bn_android_clean.clicked.connect(
-            lambda: UIFunction.androidStackPages(self, "page_clean"))
-        self.ui.bn_android_world.clicked.connect(
-            lambda: UIFunction.androidStackPages(self, "page_world"))
+        # self.ui.bn_android_contact.clicked.connect(
+        #     lambda: UIFunction.androidStackPages(self, "page_contact"))
+        # self.ui.bn_android_game.clicked.connect(
+        #     lambda: UIFunction.androidStackPages(self, "page_game"))
+        # self.ui.bn_android_clean.clicked.connect(
+        #     lambda: UIFunction.androidStackPages(self, "page_clean"))
+        # self.ui.bn_android_world.clicked.connect(
+        #     lambda: UIFunction.androidStackPages(self, "page_world"))
 
-        self.ui.bn_android_contact_delete.clicked.connect(lambda: self.dialogexec(
-            "Warning", "The Contact Infromtion will be Deleted, Do you want to continue.", "icons/1x/errorAsset 55.png", "Cancel", "Yes"))
+        self.ui.new_downloads.clicked.connect(
+            lambda: UIFunction.androidStackPages(self, "page_contact"))
+        self.ui.old_downloads.clicked.connect(
+            lambda: UIFunction.androidStackPages(self, "page_game"))
+        # self.ui.bn_android_clean.clicked.connect(
+        #     lambda: UIFunction.androidStackPages(self, "page_clean"))
+        # self.ui.bn_android_world.clicked.connect(
+        #     lambda: UIFunction.androidStackPages(self, "page_world"))
 
         # self.ui.bn_android_contact_edit.clicked.connect(
         #     lambda: APFunction.editable(self))
@@ -295,18 +304,8 @@ class UIFunction(MainWindow):
         # self.ui.bn_android_contact_save.clicked.connect(
         #     lambda: APFunction.saveContact(self))
 
-        self.ui.textEdit_gamepad.setVerticalScrollBar(
-            self.ui.vsb_gamepad)   # SETTING THE TEXT FILED AREA A SCROLL BAR
-        self.ui.textEdit_gamepad.setText(
-            "Type Here Something, or paste something here")
 
-        self.ui.horizontalSlider_2.valueChanged.connect(lambda: print(
-            "Slider: Horizondal: ", self.ui.horizontalSlider_2.value()))  # CHECK WEATHER THE SLIDER IS MOVED OR NOT
-        # WHEN THE CHECK BOX IS CHECKED IT ECECUTES THE ERROR BOX WITH MESSAGE.
-        self.ui.checkBox.stateChanged.connect(lambda: self.errorexec(
-            "Happy to Know you liked the UI", "icons/1x/smile2Asset 1.png", "Ok"))
-        self.ui.checkBox_2.stateChanged.connect(lambda: self.errorexec(
-            "Even More Happy to hear this", "icons/1x/smileAsset 1.png", "Ok"))
+        
 
         ##########PAGE: ABOUT HOME #############
         # self.ui.text_about_home.setVerticalScrollBar(self.ui.vsb_about_home)
@@ -315,179 +314,33 @@ class UIFunction(MainWindow):
 
     
     def androidStackPages(self, page):
-        for each in self.ui.frame_android_menu.findChildren(QFrame):
+        for each in self.ui.frame_download_menu.findChildren(QFrame):
             each.setStyleSheet("background:rgb(51,51,51)")
 
         if page == "page_contact":
             self.ui.stackedWidget_android.setCurrentWidget(
-                self.ui.page_android_contact)
+                self.ui.page_new_download)
             self.ui.lab_tab.setText("Android > Contact")
-            self.ui.frame_android_contact.setStyleSheet(
-                "background:rgb(91,90,90)")
+            # self.ui.frame_android_contact.setStyleSheet(
+            #     "background:rgb(91,90,90)")
 
         elif page == "page_game":
             self.ui.stackedWidget_android.setCurrentWidget(
                 self.ui.page_android_game)
             self.ui.lab_tab.setText("Android > GamePad")
-            self.ui.frame_android_game.setStyleSheet(
-                "background:rgb(91,90,90)")
+            # self.ui.frame_android_game.setStyleSheet(
+            #     "background:rgb(91,90,90)")
 
         elif page == "page_clean":
             self.ui.stackedWidget_android.setCurrentWidget(
                 self.ui.page_android_clean)
             self.ui.lab_tab.setText("Android > Clean")
-            self.ui.frame_android_clean.setStyleSheet(
-                "background:rgb(91,90,90)")
+            # self.ui.frame_android_clean.setStyleSheet(
+            #     "background:rgb(91,90,90)")
 
         elif page == "page_world":
             self.ui.stackedWidget_android.setCurrentWidget(
                 self.ui.page_android_world)
             self.ui.lab_tab.setText("Android > World")
-            self.ui.frame_android_world.setStyleSheet(
-                "background:rgb(91,90,90)")
-
-
-
-# class APFunction():
-
-#     def __init__(self):
-#         self.service = None
-
-
-#     def login(self):
-#         self.service = create_service('client-secret.json',
-#                                  'gmail', 'v1', ['https://mail.google.com/'])
-
-#     def logout(self):
-#         shutil.rmtree(os.path.join(os.getcwd(), 'token files'))
-
-#     def search_emails(self, query_string: str, label_ids: List = None):
-#         try:
-#             message_list_response = self.service.users().messages().list(
-#                 userId='me',
-#                 labelIds=label_ids,
-#                 q=query_string
-#             ).execute()
-
-#             message_items = message_list_response.get('messages')
-#             next_page_token = message_list_response.get('nextPageToken')
-#             while next_page_token:
-#                 message_list_response = self.service.users().messages().list(
-#                     userId='me',
-#                     labelIds=label_ids,
-#                     q=query_string,
-#                     pageToken=next_page_token
-#                 ).execute()
-
-#                 message_items.extend(message_list_response.get('messages'))
-#                 next_page_token = message_list_response.get('nextPageToken')
-#             return message_items
-#         except Exception as e:
-#             raise NoEmailFound('No emails returned')
-
-#     def get_file_data(self, message_id, attachment_id, file_name, save_location):
-#         response = self.service.users().messages().attachments().get(
-#             userId='me',
-#             messageId=message_id,
-#             id=attachment_id
-#         ).execute()
-
-#         file_data = base64.urlsafe_b64decode(
-#             response.get('data').encode('UTF-8'))
-#         return file_data
-
-#     def get_message_detail(self, message_id, msg_format='metadata', metadata_headers: List = None):
-#         message_detail = self.service.users().messages().get(
-#             userId='me',
-#             id=message_id,
-#             format=msg_format,
-#             metadataHeaders=metadata_headers
-#         ).execute()
-#         return message_detail
-
-#     def save_attachments(self):
-
-#         query_string = 'is:unread has:attachment after:2022/9/7'
-#         save_location = os.getcwd()
-#         email_messages = APFunction.search_emails(self, query_string)
-
-#         for email_message in email_messages:
-#             messageDetail = APFunction.get_message_detail(self, 
-#                 email_message['id'], msg_format='full', metadata_headers=['parts'])
-#             messageDetailPayload = messageDetail.get('payload')
-
-#             if 'parts' in messageDetailPayload:
-#                 for msgPayload in messageDetailPayload['parts']:
-#                     file_name = msgPayload['filename']
-#                     body = msgPayload['body']
-#                     if 'attachmentId' in body:
-#                         attachment_id = body['attachmentId']
-#                         attachment_content = APFunction.get_file_data(self, 
-#                             email_message['id'], attachment_id, file_name, save_location)
-#                         with open(os.path.join(save_location, file_name), 'wb') as _f:
-#                             _f.write(attachment_content)
-#                             print(
-#                                 f'File {file_name} is saved at {save_location}')
-#             time.sleep(0.5)
-
-
-#     def start_download(self):
-#         self.service = create_service('client-secret.json',
-#                                  'gmail', 'v1', ['https://mail.google.com/'])
-
-        
-#         self.trd = td.Thread(target=self.save_attachments, args = () )
-        
-#         self.trd.start()
-# #-----------------------------------------------------------------------------------------------------------------------
-
-#     def addNumbers(self, number, enable):
-#         if enable:
-#             lastProgress = 0
-#             for x in range(0, int(number), 1):
-#                 progress = int((x/int(number))*100)
-#                 if progress != lastProgress:
-#                     self.ui.progressBar_bug.setValue(progress)
-#                     lastProgress = progress
-#             self.ui.progressBar_bug.setValue(100)
-
-#     def cloudConnect(self):
-#         self.ui.bn_cloud_clear.setEnabled(False)
-#         textID = self.ui.line_cloud_id.text()
-#         textADRESS = self.ui.line_cloud_adress.text()
-#         if textID == 'asd' and textADRESS == '1234':
-#             self.ui.line_cloud_adress.setText("")
-#             self.ui.line_cloud_id.setText("")
-#             self.ui.line_cloud_proxy.setText("Connection established")
-#         else:
-#             self.errorexec("Incorrect Credentials",
-#                            "icons/1x/errorAsset 55.png", "Retry")
-
-#     def cloudClear(self):
-#         self.ui.line_cloud_proxy.setText("")
-#         self.ui.line_cloud_adress.setText("")
-#         self.ui.line_cloud_id.setText("")
-
-#     def editable(self):
-#         self.ui.line_android_name.setEnabled(True)
-#         self.ui.line_android_adress.setEnabled(True)
-#         self.ui.line_android_org.setEnabled(True)
-#         self.ui.line_android_email.setEnabled(True)
-#         self.ui.line_android_ph.setEnabled(True)
-
-#         self.ui.bn_android_contact_save.setEnabled(True)
-#         self.ui.bn_android_contact_edit.setEnabled(False)
-#         self.ui.bn_android_contact_share.setEnabled(False)
-#         self.ui.bn_android_contact_delete.setEnabled(False)
-
-#     def saveContact(self):
-#         self.ui.line_android_name.setEnabled(False)
-#         self.ui.line_android_adress.setEnabled(False)
-#         self.ui.line_android_org.setEnabled(False)
-#         self.ui.line_android_email.setEnabled(False)
-#         self.ui.line_android_ph.setEnabled(False)
-
-#         self.ui.bn_android_contact_save.setEnabled(False)
-#         self.ui.bn_android_contact_edit.setEnabled(True)
-#         self.ui.bn_android_contact_share.setEnabled(True)
-#         self.ui.bn_android_contact_delete.setEnabled(True)
+            # self.ui.frame_android_world.setStyleSheet(
+            #     "background:rgb(91,90,90)")

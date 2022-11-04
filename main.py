@@ -47,8 +47,8 @@ class dialogUi(QDialog):
         self.d.bn_close.clicked.connect(lambda: self.close())
 
         #-----> THIS FUNCTION WILL CHECKT WEATHER THE BUTRTON ON THE DIALOGBOX IS CLICKED, AND IF SO DIRECTS TO THE FUNCTINON : diag_return()
-        self.d.bn_east.clicked.connect(lambda: self.close())
-        self.d.bn_west.clicked.connect(lambda: self.close())
+        # self.d.bn_east.clicked.connect(lambda: self.close())
+        # self.d.bn_west.clicked.connect(lambda: self.close())
         ##############################################################################################
 
     ##################################################################################################                        ------(C2)
@@ -76,11 +76,11 @@ class dialogUi(QDialog):
     #THIS IS MADE BY CALLING THIS FUNCTION WHICH TAKES: HEADING, MESSAGE, ICON, BUTTON NAME 1, BUTTON NAME 2 AS ARUMENT.
     #EMBED THE GIVEN PROPERT TO THE DIALOGBOX AND FINALLY DISPLAYS IT IN THE WINDOW.
     #-------> SETTING THE DIALOGBOX CONFIGRATION: TEXT IN BUTTON, LABEL, HEADING
-    def dialogConstrict(self, heading, message, icon, btn1, btn2):
+    def dialogConstrict(self, heading, message, icon):
         self.d.lab_heading.setText(heading)
         self.d.lab_message.setText(message)
-        self.d.bn_east.setText(btn2)
-        self.d.bn_west.setText(btn1)
+        # self.d.bn_east.setText(btn2)
+        # self.d.bn_west.setText(btn1)
         pixmap = QtGui.QPixmap(icon)
         self.d.lab_icon.setPixmap(pixmap)
     ##################################################################################################
@@ -181,8 +181,8 @@ class MainWindow(QMainWindow):
     #THIS CODE EXECUTES THE DIALOGBOX AND SO WE CAN SEE THE DIALOG BOX IN THE SCREEN.
     #DURING THE APPEARENCE OF THIS WINDOW, YOU CANNOT USE THE MAINWINDOW, YOU SHPULD EITHER PRESS ANY ONE OFT HE PROVIDED BUTTONS
     #OR JUST CLODE THE DIALOG BOX.
-    def dialogexec(self, heading, message, icon, btn1, btn2):
-        dialogUi.dialogConstrict(self.diag, heading, message, icon, btn1, btn2)
+    def dialogexec(self, heading, message, icon):
+        dialogUi.dialogConstrict(self.diag, heading, message, icon)
         self.diag.exec_()
     #############################################################
 
