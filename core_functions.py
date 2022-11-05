@@ -106,8 +106,6 @@ def save_attachments():
     global status
     global service_mail
     global query_string
-    # query_string = 'is:unread has:attachment after:2022/9/7'
-    print(query_string)
     save_location = dname
 
     while status:
@@ -165,7 +163,7 @@ def save_attachments():
                             print(F'Folder created with ID: "{file.get("id")}".')
 
             time.sleep(0.5)
-    return 
+    return
 
 
 def start_download(k):
@@ -212,7 +210,7 @@ def filters(email_from, domain, date, unread, localStorage, gDrive):
     if(gdStatus):
         service_drive = Construct_service('drive')
     if(unread):
-        query_string = "is:unread "+" has:attachment "+"after:"+date
+        query_string = "is:unread"+" has:attachment "+"after:"+date
     else:
         query_string = " has:attachment "+"after:"+date
     
