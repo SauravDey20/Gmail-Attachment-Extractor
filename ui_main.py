@@ -401,7 +401,7 @@ class Ui_MainWindow(object):
 "	background-color: rgba(0,0,0,0);\n"
 "}")
         icon7 = QIcon()
-        icon7.addFile(u"icons/1x/androidAsset 49.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u"icons/1x/smile2Asset 1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bn_android.setIcon(icon7)
         self.bn_android.setIconSize(QSize(20, 22))
         self.bn_android.setFlat(True)
@@ -447,14 +447,14 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet(u"")
         self.page_home = QWidget()
         self.page_home.setObjectName(u"page_home")
-        self.page_home.setStyleSheet(u"background:rgb(74, 200, 175)")
+        self.page_home.setStyleSheet(u"background:rgb(24, 24, 24);")
         self.horizontalLayout_19 = QHBoxLayout(self.page_home)
         self.horizontalLayout_19.setSpacing(0)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.horizontalLayout_19.setContentsMargins(0, 5, 0, 5)
         self.frame_home_main = QFrame(self.page_home)
         self.frame_home_main.setObjectName(u"frame_home_main")
-        self.frame_home_main.setStyleSheet(u"background:reg(#008B6D);")
+        self.frame_home_main.setStyleSheet(u"background:rgb(24, 24, 24);")
         self.frame_home_main.setFrameShape(QFrame.NoFrame)
         self.frame_home_main.setFrameShadow(QFrame.Plain)
         self.verticalLayout_5 = QVBoxLayout(self.frame_home_main)
@@ -466,12 +466,14 @@ class Ui_MainWindow(object):
         self.lab_home_main_hed.setMinimumSize(QSize(0, 55))
         self.lab_home_main_hed.setMaximumSize(QSize(16777215, 55))
         font1 = QFont()
-        font1.setFamily(u"Segoe UI Semilight")
-        font1.setPointSize(24)
+        font1.setFamily(u"Arial")
+        font1.setPointSize(18)
+        font1.setBold(False)
+        font1.setItalic(False)
+        font1.setWeight(9)
         self.lab_home_main_hed.setFont(font1)
-        self.lab_home_main_hed.setStyleSheet(u"QLabel {\n"
-"	color:rgb(0, 0, 0);\n"
-"}")
+        self.lab_home_main_hed.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 75 18pt \"Arial\";")
         self.lab_home_main_hed.setTextFormat(Qt.RichText)
 
         self.verticalLayout_5.addWidget(self.lab_home_main_hed)
@@ -484,11 +486,9 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lab_home_main_disc.sizePolicy().hasHeightForWidth())
         self.lab_home_main_disc.setSizePolicy(sizePolicy)
-        font2 = QFont()
-        font2.setFamily(u"Segoe UI")
-        font2.setPointSize(10)
-        self.lab_home_main_disc.setFont(font2)
-        self.lab_home_main_disc.setStyleSheet(u"color:rgb(0 ,0 ,0);")
+        self.lab_home_main_disc.setFont(font1)
+        self.lab_home_main_disc.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 75 18pt \"Arial\";")
         self.lab_home_main_disc.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.lab_home_main_disc.setWordWrap(True)
         self.lab_home_main_disc.setMargin(5)
@@ -497,6 +497,9 @@ class Ui_MainWindow(object):
 
         self.loginButton = QPushButton(self.frame_home_main)
         self.loginButton.setObjectName(u"loginButton")
+        self.loginButton.setStyleSheet(u"background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 181, 251, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"color: rgb(0, 0, 0);\n"
+"font: 75 10pt \"Arial\";")
         self.loginButton.setIconSize(QSize(40, 30))
 
         self.verticalLayout_5.addWidget(self.loginButton)
@@ -506,6 +509,7 @@ class Ui_MainWindow(object):
 
         self.vert_divide = QFrame(self.page_home)
         self.vert_divide.setObjectName(u"vert_divide")
+        self.vert_divide.setStyleSheet(u"")
         self.vert_divide.setFrameShape(QFrame.VLine)
         self.vert_divide.setFrameShadow(QFrame.Sunken)
 
@@ -514,7 +518,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_home)
         self.home_after_login = QWidget()
         self.home_after_login.setObjectName(u"home_after_login")
-        self.home_after_login.setStyleSheet(u"background:rgb(74, 200, 175)")
+        self.home_after_login.setStyleSheet(u"background:rgb(24, 24, 24);")
         self.verticalLayout_13 = QVBoxLayout(self.home_after_login)
         self.verticalLayout_13.setSpacing(5)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
@@ -523,17 +527,15 @@ class Ui_MainWindow(object):
         self.lab_about_home.setObjectName(u"lab_about_home")
         self.lab_about_home.setMinimumSize(QSize(0, 55))
         self.lab_about_home.setMaximumSize(QSize(16777215, 55))
-        font3 = QFont()
-        font3.setFamily(u"Segoe UI")
-        font3.setPointSize(24)
-        self.lab_about_home.setFont(font3)
-        self.lab_about_home.setStyleSheet(u"color:rgb(0 ,0 ,0);")
+        self.lab_about_home.setFont(font1)
+        self.lab_about_home.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 75 18pt \"Arial\";")
 
         self.verticalLayout_13.addWidget(self.lab_about_home)
 
         self.frame_about_home = QFrame(self.home_after_login)
         self.frame_about_home.setObjectName(u"frame_about_home")
-        self.frame_about_home.setStyleSheet(u"color:rgb(0 ,0 ,0);")
+        self.frame_about_home.setStyleSheet(u"background:rgb(24, 24, 24);")
         self.frame_about_home.setFrameShape(QFrame.StyledPanel)
         self.frame_about_home.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_28 = QHBoxLayout(self.frame_about_home)
@@ -542,6 +544,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_28.setContentsMargins(5, 5, 0, 5)
         self.logout = QPushButton(self.frame_about_home)
         self.logout.setObjectName(u"logout")
+        self.logout.setStyleSheet(u"background: qlineargradient(spread:pad, x1:1, y1:0.023, x2:1, y2:0, stop:0 rgba(220, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"color: rgb(0, 0, 0);\n"
+"font: 75 10pt \"Arial\";")
 
         self.horizontalLayout_28.addWidget(self.logout)
 
@@ -556,10 +561,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.label_10 = QLabel(self.page_about_cloud)
         self.label_10.setObjectName(u"label_10")
-        font4 = QFont()
-        font4.setFamily(u"Segoe UI")
-        font4.setPointSize(30)
-        self.label_10.setFont(font4)
+        font2 = QFont()
+        font2.setFamily(u"Segoe UI")
+        font2.setPointSize(30)
+        self.label_10.setFont(font2)
         self.label_10.setStyleSheet(u"color:rgb(255,255,255);")
         self.label_10.setAlignment(Qt.AlignCenter)
 
@@ -593,6 +598,9 @@ class Ui_MainWindow(object):
         self.lab_cloud_main.setObjectName(u"lab_cloud_main")
         self.lab_cloud_main.setMinimumSize(QSize(0, 55))
         self.lab_cloud_main.setMaximumSize(QSize(16777215, 55))
+        font3 = QFont()
+        font3.setFamily(u"Segoe UI")
+        font3.setPointSize(24)
         self.lab_cloud_main.setFont(font3)
         self.lab_cloud_main.setStyleSheet(u"QLabel {\n"
 "	color:rgb(255,255,255);\n"
@@ -605,10 +613,10 @@ class Ui_MainWindow(object):
         self.frame_2.setEnabled(True)
         self.frame_2.setMinimumSize(QSize(0, 235))
         self.frame_2.setMaximumSize(QSize(16777215, 235))
-        font5 = QFont()
-        font5.setFamily(u"Segoe UI")
-        font5.setPointSize(12)
-        self.frame_2.setFont(font5)
+        font4 = QFont()
+        font4.setFamily(u"Segoe UI")
+        font4.setPointSize(12)
+        self.frame_2.setFont(font4)
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.frame_2)
@@ -619,10 +627,10 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.frame_2)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMinimumSize(QSize(100, 0))
-        font6 = QFont()
-        font6.setFamily(u"Segoe UI")
-        font6.setPointSize(14)
-        self.label_2.setFont(font6)
+        font5 = QFont()
+        font5.setFamily(u"Segoe UI")
+        font5.setPointSize(14)
+        self.label_2.setFont(font5)
         self.label_2.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
@@ -630,7 +638,7 @@ class Ui_MainWindow(object):
         self.label_3 = QLabel(self.frame_2)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setMinimumSize(QSize(100, 0))
-        self.label_3.setFont(font6)
+        self.label_3.setFont(font5)
         self.label_3.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_2.addWidget(self.label_3, 1, 0, 1, 1)
@@ -638,7 +646,7 @@ class Ui_MainWindow(object):
         self.label_4 = QLabel(self.frame_2)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMinimumSize(QSize(100, 0))
-        self.label_4.setFont(font6)
+        self.label_4.setFont(font5)
         self.label_4.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.gridLayout_2.addWidget(self.label_4, 2, 0, 1, 1)
@@ -647,7 +655,7 @@ class Ui_MainWindow(object):
         self.line_cloud_proxy.setObjectName(u"line_cloud_proxy")
         self.line_cloud_proxy.setMinimumSize(QSize(400, 25))
         self.line_cloud_proxy.setMaximumSize(QSize(500, 25))
-        self.line_cloud_proxy.setFont(font5)
+        self.line_cloud_proxy.setFont(font4)
         self.line_cloud_proxy.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -669,7 +677,7 @@ class Ui_MainWindow(object):
         self.line_cloud_id.setEnabled(True)
         self.line_cloud_id.setMinimumSize(QSize(400, 25))
         self.line_cloud_id.setMaximumSize(QSize(500, 25))
-        self.line_cloud_id.setFont(font5)
+        self.line_cloud_id.setFont(font4)
         self.line_cloud_id.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -690,7 +698,7 @@ class Ui_MainWindow(object):
         self.line_cloud_adress.setObjectName(u"line_cloud_adress")
         self.line_cloud_adress.setMinimumSize(QSize(400, 25))
         self.line_cloud_adress.setMaximumSize(QSize(500, 25))
-        self.line_cloud_adress.setFont(font5)
+        self.line_cloud_adress.setFont(font4)
         self.line_cloud_adress.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(255,255,255);\n"
 "	border:2px solid rgb(51,51,51);\n"
@@ -720,7 +728,7 @@ class Ui_MainWindow(object):
         self.bn_cloud_clear.setEnabled(True)
         self.bn_cloud_clear.setMinimumSize(QSize(69, 25))
         self.bn_cloud_clear.setMaximumSize(QSize(69, 25))
-        self.bn_cloud_clear.setFont(font5)
+        self.bn_cloud_clear.setFont(font4)
         self.bn_cloud_clear.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -748,7 +756,7 @@ class Ui_MainWindow(object):
         self.bn_cloud_connect.setObjectName(u"bn_cloud_connect")
         self.bn_cloud_connect.setMinimumSize(QSize(69, 25))
         self.bn_cloud_connect.setMaximumSize(QSize(69, 25))
-        self.bn_cloud_connect.setFont(font5)
+        self.bn_cloud_connect.setFont(font4)
         self.bn_cloud_connect.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(51,51,51);\n"
 "	border-radius: 5px;	\n"
@@ -818,7 +826,7 @@ class Ui_MainWindow(object):
         self.stackedWidget_android.setStyleSheet(u"background:rgb(91,90,90);")
         self.page_new_download = QWidget()
         self.page_new_download.setObjectName(u"page_new_download")
-        self.page_new_download.setStyleSheet(u"background:rgb(74, 200, 175)")
+        self.page_new_download.setStyleSheet(u"background:rgb(24, 24, 24);")
         self.verticalLayout_10 = QVBoxLayout(self.page_new_download)
         self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
@@ -826,17 +834,19 @@ class Ui_MainWindow(object):
         self.frame_3 = QFrame(self.page_new_download)
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setAutoFillBackground(False)
-        self.frame_3.setStyleSheet(u"background:rgb(74, 200, 175)")
+        self.frame_3.setStyleSheet(u"background:rgb(24, 24, 24);")
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.gDrive = QRadioButton(self.frame_3)
         self.gDrive.setObjectName(u"gDrive")
         self.gDrive.setGeometry(QRect(270, 340, 201, 20))
-        self.gDrive.setStyleSheet(u"font: 75 10pt \"MS Shell Dlg 2\";")
+        self.gDrive.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";")
         self.unread = QCheckBox(self.frame_3)
         self.unread.setObjectName(u"unread")
         self.unread.setGeometry(QRect(510, 80, 161, 31))
-        self.unread.setStyleSheet(u"font: 75 10pt \"MS Shell Dlg 2\";")
+        self.unread.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";")
         self.lab_Bug = QLabel(self.frame_3)
         self.lab_Bug.setObjectName(u"lab_Bug")
         self.lab_Bug.setEnabled(True)
@@ -844,76 +854,102 @@ class Ui_MainWindow(object):
         self.lab_Bug.setMinimumSize(QSize(0, 55))
         self.lab_Bug.setMaximumSize(QSize(16777215, 55))
         self.lab_Bug.setFont(font1)
-        self.lab_Bug.setStyleSheet(u"color:rgb(0, 0, 0);")
+        self.lab_Bug.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 75 18pt \"Arial\";")
         self.applyFilters = QPushButton(self.frame_3)
         self.applyFilters.setObjectName(u"applyFilters")
         self.applyFilters.setGeometry(QRect(10, 250, 141, 41))
         self.applyFilters.setAutoFillBackground(False)
-        self.applyFilters.setStyleSheet(u"font: 75 9pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);")
+        self.applyFilters.setStyleSheet(u"\n"
+"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";\n"
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(141, 0, 131, 255), stop:1 rgba(255, 255, 255, 255))")
         self.choose_directory = QPushButton(self.frame_3)
         self.choose_directory.setObjectName(u"choose_directory")
-        self.choose_directory.setGeometry(QRect(10, 390, 181, 41))
-        self.choose_directory.setStyleSheet(u"font: 75 9pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);")
+        self.choose_directory.setGeometry(QRect(10, 390, 211, 41))
+        self.choose_directory.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"font: 10pt \"Arial\";\n"
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(141, 0, 131, 255), stop:1 rgba(255, 255, 255, 255))")
         self.save_attach = QPushButton(self.frame_3)
         self.save_attach.setObjectName(u"save_attach")
-        self.save_attach.setGeometry(QRect(190, 490, 231, 61))
+        self.save_attach.setGeometry(QRect(10, 500, 231, 61))
         self.save_attach.setAutoFillBackground(False)
         self.save_attach.setStyleSheet(u"background: rgb(85, 255, 0);\n"
 "font: 75 10pt \"MS Shell Dlg 2\";")
-        self.stop_save_attach = QPushButton(self.frame_3)
-        self.stop_save_attach.setObjectName(u"stop_save_attach")
-        self.stop_save_attach.setGeometry(QRect(490, 490, 261, 61))
-        self.stop_save_attach.setStyleSheet(u"background: rgb(255, 0, 0);\n"
-"font: 10pt \"MS Shell Dlg 2\";")
+        icon8 = QIcon()
+        icon8.addFile(u"icons/1x/play.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.save_attach.setIcon(icon8)
         self.localStorage = QRadioButton(self.frame_3)
         self.localStorage.setObjectName(u"localStorage")
         self.localStorage.setGeometry(QRect(10, 340, 231, 20))
-        self.localStorage.setStyleSheet(u"font: 75 10pt \"MS Shell Dlg 2\";")
+        self.localStorage.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";")
         self.email_from = QLineEdit(self.frame_3)
         self.email_from.setObjectName(u"email_from")
         self.email_from.setGeometry(QRect(70, 80, 151, 31))
-        self.email_from.setStyleSheet(u"font: 9pt \"MS Shell Dlg 2\";")
+        self.email_from.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 9pt \"Arial\";")
         self.domain = QLineEdit(self.frame_3)
         self.domain.setObjectName(u"domain")
         self.domain.setGeometry(QRect(330, 80, 131, 31))
-        self.domain.setStyleSheet(u"font: 9pt \"MS Shell Dlg 2\";")
+        self.domain.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 9pt \"Arial\";")
         self.label = QLabel(self.frame_3)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(10, 80, 51, 21))
-        self.label.setStyleSheet(u"font: 75 11pt \"MS Shell Dlg 2\";")
+        self.label.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";")
         self.label_5 = QLabel(self.frame_3)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setGeometry(QRect(240, 80, 81, 21))
-        self.label_5.setStyleSheet(u"font: 75 11pt \"MS Shell Dlg 2\";")
+        self.label_5.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";")
         self.date_from = QDateEdit(self.frame_3)
         self.date_from.setObjectName(u"date_from")
         self.date_from.setGeometry(QRect(70, 190, 194, 22))
-        self.date_from.setStyleSheet(u"color:rgb(251, 251, 251);\n"
-"font: 10pt \"MS Shell Dlg 2\";")
+        self.date_from.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 9pt \"Arial\";")
         self.date_from.setDateTime(QDateTime(QDate(2020, 1, 1), QTime(0, 0, 0)))
         self.label_6 = QLabel(self.frame_3)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(10, 190, 51, 21))
-        self.label_6.setStyleSheet(u"font: 75 11pt \"MS Shell Dlg 2\";")
+        self.label_6.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";")
         self.lab_Bug_2 = QLabel(self.frame_3)
         self.lab_Bug_2.setObjectName(u"lab_Bug_2")
         self.lab_Bug_2.setEnabled(True)
         self.lab_Bug_2.setGeometry(QRect(10, 130, 971, 55))
         self.lab_Bug_2.setMinimumSize(QSize(0, 55))
         self.lab_Bug_2.setMaximumSize(QSize(16777215, 55))
-        self.lab_Bug_2.setFont(font1)
-        self.lab_Bug_2.setStyleSheet(u"color:rgb(0, 0, 0);")
+        font6 = QFont()
+        font6.setFamily(u"Arial")
+        font6.setPointSize(14)
+        font6.setBold(False)
+        font6.setItalic(False)
+        font6.setWeight(50)
+        self.lab_Bug_2.setFont(font6)
+        self.lab_Bug_2.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font:14pt \"Arial\";")
         self.label_7 = QLabel(self.frame_3)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setGeometry(QRect(290, 190, 71, 21))
-        self.label_7.setStyleSheet(u"font: 75 11pt \"MS Shell Dlg 2\";")
+        self.label_7.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";")
         self.date_upto = QDateEdit(self.frame_3)
         self.date_upto.setObjectName(u"date_upto")
         self.date_upto.setGeometry(QRect(370, 190, 194, 22))
-        self.date_upto.setStyleSheet(u"color:rgb(251, 251, 251);\n"
-"font: 10pt \"MS Shell Dlg 2\";")
+        self.date_upto.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 9pt \"Arial\";")
+        self.label_8 = QLabel(self.frame_3)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(234, 395, 711, 31))
+        self.label_8.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 9pt \"Arial\";")
+        self.label_9 = QLabel(self.frame_3)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(170, 250, 711, 31))
+        self.label_9.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 9pt \"Arial\";")
 
         self.verticalLayout_10.addWidget(self.frame_3)
 
@@ -945,7 +981,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.setContentsMargins(5, 0, 0, 0)
         self.textEdit_gamepad = QTextEdit(self.frame_textbar)
         self.textEdit_gamepad.setObjectName(u"textEdit_gamepad")
-        self.textEdit_gamepad.setFont(font5)
+        self.textEdit_gamepad.setFont(font4)
         self.textEdit_gamepad.setStyleSheet(u"color:rgb(255,255,255);")
         self.textEdit_gamepad.setFrameShape(QFrame.NoFrame)
         self.textEdit_gamepad.setFrameShadow(QFrame.Plain)
@@ -1011,7 +1047,7 @@ class Ui_MainWindow(object):
         font8.setFamily(u"Segoe UI Light")
         font8.setPointSize(10)
         self.lab_tab.setFont(font8)
-        self.lab_tab.setStyleSheet(u"color:rgb(255,255,255);")
+        self.lab_tab.setStyleSheet(u"background:rgb(24, 24, 24);")
 
         self.horizontalLayout_12.addWidget(self.lab_tab)
 
@@ -1022,7 +1058,7 @@ class Ui_MainWindow(object):
         self.frame_drag.setObjectName(u"frame_drag")
         self.frame_drag.setMinimumSize(QSize(20, 20))
         self.frame_drag.setMaximumSize(QSize(20, 20))
-        self.frame_drag.setStyleSheet(u"background:rgb(51,51,51);")
+        self.frame_drag.setStyleSheet(u"background:rgb(24, 24, 24);")
         self.frame_drag.setFrameShape(QFrame.NoFrame)
         self.frame_drag.setFrameShadow(QFrame.Plain)
         self.horizontalLayout_13 = QHBoxLayout(self.frame_drag)
@@ -1111,13 +1147,14 @@ class Ui_MainWindow(object):
         self.applyFilters.setText(QCoreApplication.translate("MainWindow", u"Apply Filters", None))
         self.choose_directory.setText(QCoreApplication.translate("MainWindow", u"Select Download Directory", None))
         self.save_attach.setText(QCoreApplication.translate("MainWindow", u"Start Download", None))
-        self.stop_save_attach.setText(QCoreApplication.translate("MainWindow", u"Stop Download", None))
         self.localStorage.setText(QCoreApplication.translate("MainWindow", u"Download To Local Storage", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"FROM:", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"DOMAIN:", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"From:", None))
         self.lab_Bug_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Date and Time Range</span></p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Up Until:", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"No directory chosen", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Filters", None))
         self.lab_gamepad.setText(QCoreApplication.translate("MainWindow", u"GamePad", None))
         self.lab_tab.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
 #if QT_CONFIG(tooltip)

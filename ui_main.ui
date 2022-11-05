@@ -978,7 +978,7 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/androidAsset 49.png</normaloff>icons/1x/androidAsset 49.png</iconset>
+                 <normaloff>icons/1x/smile2Asset 1.png</normaloff>icons/1x/smile2Asset 1.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1088,7 +1088,7 @@ QPushButton:pressed {
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="styleSheet">
-                 <string notr="true">background:rgb(74, 200, 175)</string>
+                 <string notr="true">background:rgb(24, 24, 24);</string>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_19">
                  <property name="spacing">
@@ -1109,7 +1109,7 @@ QPushButton:pressed {
                  <item>
                   <widget class="QFrame" name="frame_home_main">
                    <property name="styleSheet">
-                    <string notr="true">background:reg(#008B6D);</string>
+                    <string notr="true">background:rgb(24, 24, 24);</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::NoFrame</enum>
@@ -1149,14 +1149,16 @@ QPushButton:pressed {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Segoe UI Semilight</family>
-                        <pointsize>24</pointsize>
+                        <family>Arial</family>
+                        <pointsize>18</pointsize>
+                        <weight>9</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">QLabel {
-	color:rgb(0, 0, 0);
-}</string>
+                       <string notr="true">color: rgb(255, 255, 255);
+font: 75 18pt &quot;Arial&quot;;</string>
                       </property>
                       <property name="text">
                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;About the Application&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1179,12 +1181,16 @@ QPushButton:pressed {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Segoe UI</family>
-                        <pointsize>10</pointsize>
+                        <family>Arial</family>
+                        <pointsize>18</pointsize>
+                        <weight>9</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">color:rgb(0 ,0 ,0);</string>
+                       <string notr="true">color: rgb(255, 255, 255);
+font: 75 18pt &quot;Arial&quot;;</string>
                       </property>
                       <property name="text">
                        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1207,6 +1213,11 @@ p, li { white-space: pre-wrap; }
                     </item>
                     <item>
                      <widget class="QPushButton" name="loginButton">
+                      <property name="styleSheet">
+                       <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 181, 251, 255), stop:1 rgba(255, 255, 255, 255));
+color: rgb(0, 0, 0);
+font: 75 10pt &quot;Arial&quot;;</string>
+                      </property>
                       <property name="text">
                        <string>Google Login</string>
                       </property>
@@ -1223,6 +1234,9 @@ p, li { white-space: pre-wrap; }
                  </item>
                  <item>
                   <widget class="Line" name="vert_divide">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
                    </property>
@@ -1232,7 +1246,7 @@ p, li { white-space: pre-wrap; }
                </widget>
                <widget class="QWidget" name="home_after_login">
                 <property name="styleSheet">
-                 <string notr="true">background:rgb(74, 200, 175)</string>
+                 <string notr="true">background:rgb(24, 24, 24);</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_13">
                  <property name="spacing">
@@ -1266,12 +1280,16 @@ p, li { white-space: pre-wrap; }
                    </property>
                    <property name="font">
                     <font>
-                     <family>Segoe UI</family>
-                     <pointsize>24</pointsize>
+                     <family>Arial</family>
+                     <pointsize>18</pointsize>
+                     <weight>9</weight>
+                     <italic>false</italic>
+                     <bold>false</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">color:rgb(0 ,0 ,0);</string>
+                    <string notr="true">color: rgb(255, 255, 255);
+font: 75 18pt &quot;Arial&quot;;</string>
                    </property>
                    <property name="text">
                     <string>Home</string>
@@ -1281,7 +1299,7 @@ p, li { white-space: pre-wrap; }
                  <item>
                   <widget class="QFrame" name="frame_about_home">
                    <property name="styleSheet">
-                    <string notr="true">color:rgb(0 ,0 ,0);</string>
+                    <string notr="true">background:rgb(24, 24, 24);</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1307,6 +1325,11 @@ p, li { white-space: pre-wrap; }
                     </property>
                     <item>
                      <widget class="QPushButton" name="logout">
+                      <property name="styleSheet">
+                       <string notr="true">background: qlineargradient(spread:pad, x1:1, y1:0.023, x2:1, y2:0, stop:0 rgba(220, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+color: rgb(0, 0, 0);
+font: 75 10pt &quot;Arial&quot;;</string>
+                      </property>
                       <property name="text">
                        <string>Click to Logout</string>
                       </property>
@@ -1886,7 +1909,7 @@ QPushButton:disabled {
                    </property>
                    <widget class="QWidget" name="page_new_download">
                     <property name="styleSheet">
-                     <string notr="true">background:rgb(74, 200, 175)</string>
+                     <string notr="true">background:rgb(24, 24, 24);</string>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_10">
                      <property name="spacing">
@@ -1910,7 +1933,7 @@ QPushButton:disabled {
                         <bool>false</bool>
                        </property>
                        <property name="styleSheet">
-                        <string notr="true">background:rgb(74, 200, 175)</string>
+                        <string notr="true">background:rgb(24, 24, 24);</string>
                        </property>
                        <property name="frameShape">
                         <enum>QFrame::StyledPanel</enum>
@@ -1928,7 +1951,8 @@ QPushButton:disabled {
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>Upload to Google Drive</string>
@@ -1944,7 +1968,8 @@ QPushButton:disabled {
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>Only Unread Mails</string>
@@ -1976,12 +2001,16 @@ QPushButton:disabled {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI Semilight</family>
-                          <pointsize>24</pointsize>
+                          <family>Arial</family>
+                          <pointsize>18</pointsize>
+                          <weight>9</weight>
+                          <italic>false</italic>
+                          <bold>false</bold>
                          </font>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">color:rgb(0, 0, 0);</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 75 18pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Download Past e-mails&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -2000,8 +2029,10 @@ QPushButton:disabled {
                          <bool>false</bool>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+                         <string notr="true">
+color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(141, 0, 131, 255), stop:1 rgba(255, 255, 255, 255))</string>
                         </property>
                         <property name="text">
                          <string>Apply Filters</string>
@@ -2012,13 +2043,14 @@ color: rgb(0, 0, 0);</string>
                          <rect>
                           <x>10</x>
                           <y>390</y>
-                          <width>181</width>
+                          <width>211</width>
                           <height>41</height>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+                         <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;Arial&quot;;
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(141, 0, 131, 255), stop:1 rgba(255, 255, 255, 255))</string>
                         </property>
                         <property name="text">
                          <string>Select Download Directory</string>
@@ -2027,8 +2059,8 @@ color: rgb(0, 0, 0);</string>
                        <widget class="QPushButton" name="save_attach">
                         <property name="geometry">
                          <rect>
-                          <x>190</x>
-                          <y>490</y>
+                          <x>10</x>
+                          <y>500</y>
                           <width>231</width>
                           <height>61</height>
                          </rect>
@@ -2043,22 +2075,9 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
                         <property name="text">
                          <string>Start Download</string>
                         </property>
-                       </widget>
-                       <widget class="QPushButton" name="stop_save_attach">
-                        <property name="geometry">
-                         <rect>
-                          <x>490</x>
-                          <y>490</y>
-                          <width>261</width>
-                          <height>61</height>
-                         </rect>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">background: rgb(255, 0, 0);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                        </property>
-                        <property name="text">
-                         <string>Stop Download</string>
+                        <property name="icon">
+                         <iconset>
+                          <normaloff>icons/1x/play.png</normaloff>icons/1x/play.png</iconset>
                         </property>
                        </widget>
                        <widget class="QRadioButton" name="localStorage">
@@ -2071,7 +2090,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>Download To Local Storage</string>
@@ -2087,7 +2107,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
                         </property>
                        </widget>
                        <widget class="QLineEdit" name="domain">
@@ -2100,7 +2121,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
                         </property>
                        </widget>
                        <widget class="QLabel" name="label">
@@ -2113,7 +2135,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>FROM:</string>
@@ -2129,7 +2152,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>DOMAIN:</string>
@@ -2145,8 +2169,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">color:rgb(251, 251, 251);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="dateTime">
                          <datetime>
@@ -2169,7 +2193,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>From:</string>
@@ -2201,12 +2226,16 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Segoe UI Semilight</family>
-                          <pointsize>24</pointsize>
+                          <family>Arial</family>
+                          <pointsize>14</pointsize>
+                          <weight>50</weight>
+                          <italic>false</italic>
+                          <bold>false</bold>
                          </font>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">color:rgb(0, 0, 0);</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font:14pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Date and Time Range&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -2222,7 +2251,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
                          <string>Up Until:</string>
@@ -2238,8 +2268,42 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                          </rect>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">color:rgb(251, 251, 251);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_8">
+                        <property name="geometry">
+                         <rect>
+                          <x>234</x>
+                          <y>395</y>
+                          <width>711</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>No directory chosen</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_9">
+                        <property name="geometry">
+                         <rect>
+                          <x>170</x>
+                          <y>250</y>
+                          <width>711</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>Filters</string>
                         </property>
                        </widget>
                       </widget>
@@ -2468,7 +2532,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color:rgb(255,255,255);</string>
+                   <string notr="true">background:rgb(24, 24, 24);</string>
                   </property>
                   <property name="text">
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -2496,7 +2560,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                 <string>Drag</string>
                </property>
                <property name="styleSheet">
-                <string notr="true">background:rgb(51,51,51);</string>
+                <string notr="true">background:rgb(24, 24, 24);</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>

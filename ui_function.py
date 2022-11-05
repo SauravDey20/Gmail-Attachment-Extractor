@@ -29,7 +29,7 @@ init = False  # NECRESSERY FOR INITITTION OF THE WINDOW.
 # THIS CLASS HOUSES ALL FUNCTION NECESSERY FOR OUR PROGRAMME TO RUN.
 
 login_status = 0
-
+clicked = 0
 
 def check_path(wokring_dir, token_dir):
     global login_status
@@ -239,6 +239,27 @@ class UIFunction(MainWindow):
 
     # def isChecked(self):
     #     print(self.ui.unread.isChecked())
+    # def clickChooseDirectory(self):
+    #     x = choose_directory()
+    #     self.ui.label_8.setText(x)
+    def control(self):
+        global clicked
+
+        if(clicked==0):
+            start_download(1)
+            self.ui.save_attach.setText('Stop Download')
+            self.ui.save_attach.setStyleSheet('background: rgb(255, 0, 0);\nfont: 10pt "MS Shell Dlg 2";')
+            self.ui.save_attach.setIcon(QtGui.QIcon("icons/1x/pause.png"))
+        else:
+            stop_download(0)
+            self.ui.save_attach.setText('Start Download')
+            self.ui.save_attach.setStyleSheet('background: rgb(85, 255, 0); font: 75 10pt "MS Shell Dlg 2";')
+            self.ui.save_attach.setIcon(QtGui.QIcon("icons/1x/play.png"))
+
+        clicked =  1 - clicked
+
+        print("clicked: ", clicked)
+
 
     def stackPage(self):
 
@@ -255,23 +276,24 @@ class UIFunction(MainWindow):
         #self.ui.bn_bug_start.clicked.connect(lambda: APFunction.addNumbers(self, self.ui.comboBox_bug.currentText(), True))
 
         self.ui.save_attach.clicked.connect(
-            lambda: start_download(1))
-
-        self.ui.stop_save_attach.clicked.connect(
-            lambda: stop_download(0))
+            lambda: UIFunction.control(self) 
+            )
+        
 
         self.ui.choose_directory.clicked.connect(
-            lambda: choose_directory())
+            # lambda: UIFunction.clickChooseDirectory(self)
+            lambda: self.ui.label_8.setText(choose_directory())
+            )
 
         self.ui.applyFilters.clicked.connect(
-            lambda: filters(
+            lambda: self.ui.label_9.setText(filters(
                 self.ui.email_from.text(),
                 self.ui.domain.text(),
                 self.ui.date_from.text(),
                 self.ui.unread.isChecked(), 
                 self.ui.localStorage.isChecked(), 
                 self.ui.gDrive.isChecked()
-            )
+            ))
         )
 
         # self.ui.bn_cloud_connect.clicked.connect(

@@ -169,14 +169,14 @@ def save_attachments():
 
 
 def start_download(k):
-    # global service
+    global service_mail
     global status
     status = k
-    # service = create_service('client-secret.json',
-    #                               'gmail', 'v1', ['https://mail.google.com/'])
+
+    if(service_mail == None):
+        service_mail = Construct_service('gmail')
 
     trd = td.Thread(target=save_attachments, args=())
-
     trd.start()
 
 def stop_download(k):
@@ -189,7 +189,7 @@ def choose_directory():
         None, 
         caption="Select Download Location"
     )
-    print(dname)
+    return dname
 
 def create_folder_drive(service, folder_name, parent_folder=[]):
     file_metadata = {
@@ -214,4 +214,6 @@ def filters(email_from, domain, date, unread, localStorage, gDrive):
     if(unread):
         query_string = "is:unread "+" has:attachment "+"after:"+date
     else:
-        query_string = "after:"+date
+        query_string = " has:attachment "+"after:"+date
+    
+    return query_string
