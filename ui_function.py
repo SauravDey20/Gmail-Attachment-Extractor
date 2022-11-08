@@ -261,7 +261,7 @@ class UIFunction(MainWindow):
                 self.ui.localStorage.isChecked(), 
                 self.ui.gDrive.isChecked()
             ))
-            start_download(1)
+            start_download(1, self.ui.upcoming.isChecked())
             self.ui.save_attach.setText('Stop Download')
             self.ui.save_attach.setStyleSheet('background: rgb(255, 0, 0);\nfont: 10pt "MS Shell Dlg 2";')
             self.ui.save_attach.setIcon(QtGui.QIcon("icons/1x/pause.png"))
