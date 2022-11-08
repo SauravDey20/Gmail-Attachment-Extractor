@@ -218,7 +218,7 @@ def filters(email_from, email_to, date_from_, date_to_, subject, has_words, does
     global lsStatus, gdStatus
     lsStatus = localStorage
     gdStatus = gDrive
-
+    print("in the function")
     if(gdStatus):
         service_drive = Construct_service('drive')
 
