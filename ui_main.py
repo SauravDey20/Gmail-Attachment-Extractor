@@ -950,10 +950,10 @@ class Ui_MainWindow(object):
         self.label_12.setSizePolicy(sizePolicy1)
         self.label_12.setStyleSheet(u"color: rgb(255, 255, 255);\n"
 "font: 10pt \"Arial\";")
-        self.radioButton = QRadioButton(self.frame_3)
-        self.radioButton.setObjectName(u"radioButton")
-        self.radioButton.setGeometry(QRect(510, 150, 151, 20))
-        self.radioButton.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+        self.upcoming = QRadioButton(self.frame_3)
+        self.upcoming.setObjectName(u"upcoming")
+        self.upcoming.setGeometry(QRect(510, 150, 151, 20))
+        self.upcoming.setStyleSheet(u"color: rgb(255, 255, 255);\n"
 "font: 10pt \"Arial\";")
 
         self.verticalLayout_10.addWidget(self.frame_3)
@@ -1155,11 +1155,13 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"From:", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Up Until:", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"No directory chosen", None))
+        self.date_from.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd-MM-yyyy HH:mm:ss", None))
+        self.date_upto.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd-MM-yyyy HH:mm:ss", None))
         self.read.setText(QCoreApplication.translate("MainWindow", u"Only Read Mails", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"SUBJECT:", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Has Words:", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Doesn't Have:", None))
-        self.radioButton.setText(QCoreApplication.translate("MainWindow", u"Upcoming Mails", None))
+        self.upcoming.setText(QCoreApplication.translate("MainWindow", u"Upcoming Mails", None))
         self.lab_gamepad.setText(QCoreApplication.translate("MainWindow", u"GamePad", None))
         self.lab_tab.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
 #if QT_CONFIG(tooltip)

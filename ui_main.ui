@@ -2152,6 +2152,9 @@ font: 9pt &quot;Arial&quot;;</string>
                           <day>1</day>
                          </datetime>
                         </property>
+                        <property name="displayFormat">
+                         <string>dd-MM-yyyy HH:mm:ss</string>
+                        </property>
                        </widget>
                        <widget class="QDateTimeEdit" name="date_upto">
                         <property name="geometry">
@@ -2199,6 +2202,9 @@ font: 9pt &quot;Arial&quot;;</string>
                           <month>9</month>
                           <day>14</day>
                          </date>
+                        </property>
+                        <property name="displayFormat">
+                         <string>dd-MM-yyyy HH:mm:ss</string>
                         </property>
                        </widget>
                        <widget class="QCheckBox" name="read">
@@ -2335,7 +2341,7 @@ font: 10pt &quot;Arial&quot;;</string>
                          <string>Doesn't Have:</string>
                         </property>
                        </widget>
-                       <widget class="QRadioButton" name="radioButton">
+                       <widget class="QRadioButton" name="upcoming">
                         <property name="geometry">
                          <rect>
                           <x>510</x>
