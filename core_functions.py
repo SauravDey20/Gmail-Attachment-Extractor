@@ -12,6 +12,7 @@ from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtWidgets import QLineEdit
 import io
 from googleapiclient.http import MediaIoBaseUpload
+import datetime
 
 class GmailException(Exception):
 	"""gmail base exception class"""
@@ -199,8 +200,19 @@ def create_folder_drive(service, folder_name, parent_folder=[]):
     file = service.files().create(body = file_metadata, fields = 'id').execute()
     return file
 
+def split_datetime(dt):
+    x = dt.split("-")
+    date = int(x[0])
+    month = int(x[1])
+    y = x[2].split(" ")
+    year = int(y[0])
+    t = y[1].split(":")
+    hour = int(t[0])
+    minute = int(t[1])
+    sec = int(t[2])
+    return (date, month, year, hour, minute, sec)
 
-def filters(email_from, domain, date, unread, localStorage, gDrive):
+def filters(email_from, email_to, date_from_, date_to_, subject, has_words, doesnt, upcoming, read, unread, localStorage, gDrive):
     global query_string
     global service_drive
     global lsStatus, gdStatus
@@ -209,9 +221,21 @@ def filters(email_from, domain, date, unread, localStorage, gDrive):
 
     if(gdStatus):
         service_drive = Construct_service('drive')
-    if(unread):
-        query_string = "is:unread"+" has:attachment "+"after:"+date
-    else:
-        query_string = " has:attachment "+"after:"+date
+
+    if(read and unread==0):  query_string += "is:read"
+    elif(unread and read==0): query_string += "is:unread"
+    else: pass
+
+    query_string += " from:" + email_from + " to:" + email_to + " subject:" + subject + " " + has_words + " -{" + doesnt +"}" + " has:attachment "
     
+    (date_from, month_from, year_from, hour_from, minute_from, sec_from) = split_datetime(date_from_)
+    (date_to, month_to, year_to, hour_to, minute_to, sec_to) = split_datetime(date_to_)
+
+    date_from_sec = ((datetime.datetime(year_from, month_from, date_from, hour_from, minute_from)-datetime.datetime(1970,1,1)).total_seconds()) - 5400
+    date_to_sec =  ((datetime.datetime(year_to, month_to, date_to, hour_to, minute_to)-datetime.datetime(1970,1,1)).total_seconds()) - 5400
+
+    query_string+=" after:"+date_from_sec+" before:"+date_to_sec
+    print(query_string)
     return query_string
+
+
