@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1059</width>
-    <height>715</height>
+    <width>1102</width>
+    <height>797</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1838,68 +1838,6 @@ QPushButton:disabled {
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QFrame" name="frame_download_menu">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background:rgb(251, 251, 251);</string>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Plain</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_20">
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <item>
-                     <widget class="QPushButton" name="new_downloads">
-                      <property name="text">
-                       <string>New Downloads</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="old_downloads">
-                      <property name="text">
-                       <string>Old Downloads</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
                   <widget class="QStackedWidget" name="stackedWidget_android">
                    <property name="styleSheet">
                     <string notr="true">background:rgb(91,90,90);</string>
@@ -1941,11 +1879,11 @@ QPushButton:disabled {
                        <property name="frameShadow">
                         <enum>QFrame::Raised</enum>
                        </property>
-                       <widget class="QRadioButton" name="gDrive">
+                       <widget class="QCheckBox" name="gDrive">
                         <property name="geometry">
                          <rect>
-                          <x>270</x>
-                          <y>340</y>
+                          <x>260</x>
+                          <y>410</y>
                           <width>201</width>
                           <height>20</height>
                          </rect>
@@ -2013,36 +1951,14 @@ font: 10pt &quot;Arial&quot;;</string>
 font: 75 18pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Download Past e-mails&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                        </property>
-                       </widget>
-                       <widget class="QPushButton" name="applyFilters">
-                        <property name="geometry">
-                         <rect>
-                          <x>10</x>
-                          <y>250</y>
-                          <width>141</width>
-                          <height>41</height>
-                         </rect>
-                        </property>
-                        <property name="autoFillBackground">
-                         <bool>false</bool>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">
-color: rgb(255, 255, 255);
-font: 10pt &quot;Arial&quot;;
-background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(141, 0, 131, 255), stop:1 rgba(255, 255, 255, 255))</string>
-                        </property>
-                        <property name="text">
-                         <string>Apply Filters</string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Extract Attachments&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                        </widget>
                        <widget class="QPushButton" name="choose_directory">
                         <property name="geometry">
                          <rect>
-                          <x>10</x>
-                          <y>390</y>
+                          <x>0</x>
+                          <y>470</y>
                           <width>211</width>
                           <height>41</height>
                          </rect>
@@ -2059,8 +1975,8 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(141,
                        <widget class="QPushButton" name="save_attach">
                         <property name="geometry">
                          <rect>
-                          <x>10</x>
-                          <y>500</y>
+                          <x>0</x>
+                          <y>560</y>
                           <width>231</width>
                           <height>61</height>
                          </rect>
@@ -2073,18 +1989,18 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(141,
 font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
                         </property>
                         <property name="text">
-                         <string>Start Download</string>
+                         <string>Start</string>
                         </property>
                         <property name="icon">
                          <iconset>
                           <normaloff>icons/1x/play.png</normaloff>icons/1x/play.png</iconset>
                         </property>
                        </widget>
-                       <widget class="QRadioButton" name="localStorage">
+                       <widget class="QCheckBox" name="localStorage">
                         <property name="geometry">
                          <rect>
-                          <x>10</x>
-                          <y>340</y>
+                          <x>0</x>
+                          <y>410</y>
                           <width>231</width>
                           <height>20</height>
                          </rect>
@@ -2098,12 +2014,15 @@ font: 10pt &quot;Arial&quot;;</string>
                         </property>
                        </widget>
                        <widget class="QLineEdit" name="email_from">
+                        <property name="enabled">
+                         <bool>true</bool>
+                        </property>
                         <property name="geometry">
                          <rect>
-                          <x>70</x>
-                          <y>80</y>
-                          <width>151</width>
-                          <height>31</height>
+                          <x>120</x>
+                          <y>70</y>
+                          <width>341</width>
+                          <height>41</height>
                          </rect>
                         </property>
                         <property name="styleSheet">
@@ -2111,13 +2030,13 @@ font: 10pt &quot;Arial&quot;;</string>
 font: 9pt &quot;Arial&quot;;</string>
                         </property>
                        </widget>
-                       <widget class="QLineEdit" name="domain">
+                       <widget class="QLineEdit" name="to">
                         <property name="geometry">
                          <rect>
-                          <x>330</x>
-                          <y>80</y>
-                          <width>131</width>
-                          <height>31</height>
+                          <x>120</x>
+                          <y>130</y>
+                          <width>341</width>
+                          <height>41</height>
                          </rect>
                         </property>
                         <property name="styleSheet">
@@ -2145,9 +2064,9 @@ font: 10pt &quot;Arial&quot;;</string>
                        <widget class="QLabel" name="label_5">
                         <property name="geometry">
                          <rect>
-                          <x>240</x>
-                          <y>80</y>
-                          <width>81</width>
+                          <x>10</x>
+                          <y>140</y>
+                          <width>31</width>
                           <height>21</height>
                          </rect>
                         </property>
@@ -2156,14 +2075,65 @@ font: 10pt &quot;Arial&quot;;</string>
 font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
-                         <string>DOMAIN:</string>
+                         <string>TO:</string>
                         </property>
                        </widget>
-                       <widget class="QDateEdit" name="date_from">
+                       <widget class="QLabel" name="label_6">
                         <property name="geometry">
                          <rect>
-                          <x>70</x>
-                          <y>190</y>
+                          <x>510</x>
+                          <y>240</y>
+                          <width>51</width>
+                          <height>21</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>From:</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_7">
+                        <property name="geometry">
+                         <rect>
+                          <x>500</x>
+                          <y>280</y>
+                          <width>71</width>
+                          <height>21</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>Up Until:</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_8">
+                        <property name="geometry">
+                         <rect>
+                          <x>230</x>
+                          <y>470</y>
+                          <width>711</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>No directory chosen</string>
+                        </property>
+                       </widget>
+                       <widget class="QDateTimeEdit" name="date_from">
+                        <property name="geometry">
+                         <rect>
+                          <x>590</x>
+                          <y>240</y>
                           <width>194</width>
                           <height>22</height>
                          </rect>
@@ -2177,92 +2147,17 @@ font: 9pt &quot;Arial&quot;;</string>
                           <hour>0</hour>
                           <minute>0</minute>
                           <second>0</second>
-                          <year>2020</year>
+                          <year>2022</year>
                           <month>1</month>
                           <day>1</day>
                          </datetime>
                         </property>
                        </widget>
-                       <widget class="QLabel" name="label_6">
+                       <widget class="QDateTimeEdit" name="date_upto">
                         <property name="geometry">
                          <rect>
-                          <x>10</x>
-                          <y>190</y>
-                          <width>51</width>
-                          <height>21</height>
-                         </rect>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;Arial&quot;;</string>
-                        </property>
-                        <property name="text">
-                         <string>From:</string>
-                        </property>
-                       </widget>
-                       <widget class="QLabel" name="lab_Bug_2">
-                        <property name="enabled">
-                         <bool>true</bool>
-                        </property>
-                        <property name="geometry">
-                         <rect>
-                          <x>10</x>
-                          <y>130</y>
-                          <width>971</width>
-                          <height>55</height>
-                         </rect>
-                        </property>
-                        <property name="minimumSize">
-                         <size>
-                          <width>0</width>
-                          <height>55</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>55</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <family>Arial</family>
-                          <pointsize>14</pointsize>
-                          <weight>50</weight>
-                          <italic>false</italic>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(255, 255, 255);
-font:14pt &quot;Arial&quot;;</string>
-                        </property>
-                        <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Date and Time Range&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                        </property>
-                       </widget>
-                       <widget class="QLabel" name="label_7">
-                        <property name="geometry">
-                         <rect>
-                          <x>290</x>
-                          <y>190</y>
-                          <width>71</width>
-                          <height>21</height>
-                         </rect>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;Arial&quot;;</string>
-                        </property>
-                        <property name="text">
-                         <string>Up Until:</string>
-                        </property>
-                       </widget>
-                       <widget class="QDateEdit" name="date_upto">
-                        <property name="geometry">
-                         <rect>
-                          <x>370</x>
-                          <y>190</y>
+                          <x>590</x>
+                          <y>280</y>
                           <width>194</width>
                           <height>22</height>
                          </rect>
@@ -2271,39 +2166,190 @@ font: 10pt &quot;Arial&quot;;</string>
                          <string notr="true">color: rgb(255, 255, 255);
 font: 9pt &quot;Arial&quot;;</string>
                         </property>
+                        <property name="dateTime">
+                         <datetime>
+                          <hour>0</hour>
+                          <minute>0</minute>
+                          <second>0</second>
+                          <year>2022</year>
+                          <month>12</month>
+                          <day>31</day>
+                         </datetime>
+                        </property>
+                        <property name="maximumDateTime">
+                         <datetime>
+                          <hour>23</hour>
+                          <minute>59</minute>
+                          <second>59</second>
+                          <year>2100</year>
+                          <month>12</month>
+                          <day>31</day>
+                         </datetime>
+                        </property>
+                        <property name="maximumDate">
+                         <date>
+                          <year>2100</year>
+                          <month>12</month>
+                          <day>31</day>
+                         </date>
+                        </property>
+                        <property name="minimumDate">
+                         <date>
+                          <year>2000</year>
+                          <month>9</month>
+                          <day>14</day>
+                         </date>
+                        </property>
                        </widget>
-                       <widget class="QLabel" name="label_8">
+                       <widget class="QCheckBox" name="read">
                         <property name="geometry">
                          <rect>
-                          <x>234</x>
-                          <y>395</y>
-                          <width>711</width>
+                          <x>700</x>
+                          <y>80</y>
+                          <width>161</width>
                           <height>31</height>
                          </rect>
                         </property>
                         <property name="styleSheet">
                          <string notr="true">color: rgb(255, 255, 255);
-font: 9pt &quot;Arial&quot;;</string>
+font: 10pt &quot;Arial&quot;;</string>
                         </property>
                         <property name="text">
-                         <string>No directory chosen</string>
+                         <string>Only Read Mails</string>
+                        </property>
+                       </widget>
+                       <widget class="QLineEdit" name="subject">
+                        <property name="geometry">
+                         <rect>
+                          <x>120</x>
+                          <y>180</y>
+                          <width>341</width>
+                          <height>41</height>
+                         </rect>
+                        </property>
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
                         </property>
                        </widget>
                        <widget class="QLabel" name="label_9">
                         <property name="geometry">
                          <rect>
-                          <x>170</x>
-                          <y>250</y>
-                          <width>711</width>
-                          <height>31</height>
+                          <x>0</x>
+                          <y>200</y>
+                          <width>81</width>
+                          <height>21</height>
                          </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>SUBJECT:</string>
+                        </property>
+                       </widget>
+                       <widget class="QLineEdit" name="has_words">
+                        <property name="geometry">
+                         <rect>
+                          <x>120</x>
+                          <y>240</y>
+                          <width>341</width>
+                          <height>41</height>
+                         </rect>
+                        </property>
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
                         </property>
                         <property name="styleSheet">
                          <string notr="true">color: rgb(255, 255, 255);
 font: 9pt &quot;Arial&quot;;</string>
                         </property>
+                       </widget>
+                       <widget class="QLabel" name="label_11">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>260</y>
+                          <width>81</width>
+                          <height>21</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
+                        </property>
                         <property name="text">
-                         <string>Filters</string>
+                         <string>Has Words:</string>
+                        </property>
+                       </widget>
+                       <widget class="QLineEdit" name="doesnt_have">
+                        <property name="geometry">
+                         <rect>
+                          <x>120</x>
+                          <y>300</y>
+                          <width>341</width>
+                          <height>41</height>
+                         </rect>
+                        </property>
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_12">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>310</y>
+                          <width>101</width>
+                          <height>31</height>
+                         </rect>
+                        </property>
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>Doesn't Have:</string>
+                        </property>
+                       </widget>
+                       <widget class="QRadioButton" name="radioButton">
+                        <property name="geometry">
+                         <rect>
+                          <x>510</x>
+                          <y>150</y>
+                          <width>151</width>
+                          <height>20</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>Upcoming Mails</string>
                         </property>
                        </widget>
                       </widget>

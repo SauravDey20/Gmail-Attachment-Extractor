@@ -208,7 +208,7 @@ class UIFunction(MainWindow):
                     self.ui.lab_tab.setText("Android")
                     # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
                     self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
-                    UIFunction.androidStackPages(self, "page_contact")
+                    # UIFunction.androidStackPages(self, "page_contact")
 
                 elif self.ui.frame_bottom_west.width() == 160 and index != 3:   # ABOUT PAGE STACKED WIDGET
                     self.ui.stackedWidget.setCurrentWidget(
@@ -246,6 +246,21 @@ class UIFunction(MainWindow):
         global clicked
 
         if(clicked==0):
+            lambda: self.ui.label_9.setText(filters(
+                self.ui.email_from.text(),
+                self.ui.to.text(),
+                self.ui.date_upto.text(),
+                self.ui.date_from.text(),
+                self.ui.subject.text(), 
+                self.ui.has_words.text(), 
+                self.ui.doesnt_have.text(),
+
+                self.ui.upcoming.isChecked(),
+                self.ui.read.isChecked(),
+                self.ui.unread.isChecked(), 
+                self.ui.localStorage.isChecked(), 
+                self.ui.gDrive.isChecked()
+            ))
             start_download(1)
             self.ui.save_attach.setText('Stop Download')
             self.ui.save_attach.setStyleSheet('background: rgb(255, 0, 0);\nfont: 10pt "MS Shell Dlg 2";')
@@ -285,16 +300,16 @@ class UIFunction(MainWindow):
             lambda: self.ui.label_8.setText(choose_directory())
             )
 
-        self.ui.applyFilters.clicked.connect(
-            lambda: self.ui.label_9.setText(filters(
-                self.ui.email_from.text(),
-                self.ui.domain.text(),
-                self.ui.date_from.text(),
-                self.ui.unread.isChecked(), 
-                self.ui.localStorage.isChecked(), 
-                self.ui.gDrive.isChecked()
-            ))
-        )
+        # self.ui.applyFilters.clicked.connect(
+        #     lambda: self.ui.label_9.setText(filters(
+        #         self.ui.email_from.text(),
+        #         self.ui.to.text(),
+        #         self.ui.date_from.text(),
+        #         self.ui.unread.isChecked(), 
+        #         self.ui.localStorage.isChecked(), 
+        #         self.ui.gDrive.isChecked()
+        #     ))
+        # )
 
         # self.ui.bn_cloud_connect.clicked.connect(
         #     lambda: APFunction.cloudConnect(self))
@@ -311,10 +326,12 @@ class UIFunction(MainWindow):
         # self.ui.bn_android_world.clicked.connect(
         #     lambda: UIFunction.androidStackPages(self, "page_world"))
 
-        self.ui.new_downloads.clicked.connect(
-            lambda: UIFunction.androidStackPages(self, "page_contact"))
-        self.ui.old_downloads.clicked.connect(
-            lambda: UIFunction.androidStackPages(self, "page_game"))
+        # self.ui.new_downloads.clicked.connect(
+        #     lambda: UIFunction.androidStackPages(self, "page_contact"))
+        # self.ui.old_downloads.clicked.connect(
+        #     lambda: UIFunction.androidStackPages(self, "page_game"))
+
+
         # self.ui.bn_android_clean.clicked.connect(
         #     lambda: UIFunction.androidStackPages(self, "page_clean"))
         # self.ui.bn_android_world.clicked.connect(
@@ -335,34 +352,34 @@ class UIFunction(MainWindow):
 
 
     
-    def androidStackPages(self, page):
-        for each in self.ui.frame_download_menu.findChildren(QFrame):
-            each.setStyleSheet("background:rgb(51,51,51)")
+    # def androidStackPages(self, page):
+    #     for each in self.ui.frame_download_menu.findChildren(QFrame):
+    #         each.setStyleSheet("background:rgb(51,51,51)")
 
-        if page == "page_contact":
-            self.ui.stackedWidget_android.setCurrentWidget(
-                self.ui.page_new_download)
-            self.ui.lab_tab.setText("Android > Contact")
-            # self.ui.frame_android_contact.setStyleSheet(
-            #     "background:rgb(91,90,90)")
+    #     if page == "page_contact":
+    #         self.ui.stackedWidget_android.setCurrentWidget(
+    #             self.ui.page_new_download)
+    #         self.ui.lab_tab.setText("Android > Contact")
+    #         # self.ui.frame_android_contact.setStyleSheet(
+    #         #     "background:rgb(91,90,90)")
 
-        elif page == "page_game":
-            self.ui.stackedWidget_android.setCurrentWidget(
-                self.ui.page_android_game)
-            self.ui.lab_tab.setText("Android > GamePad")
-            # self.ui.frame_android_game.setStyleSheet(
-            #     "background:rgb(91,90,90)")
+    #     elif page == "page_game":
+    #         self.ui.stackedWidget_android.setCurrentWidget(
+    #             self.ui.page_android_game)
+    #         self.ui.lab_tab.setText("Android > GamePad")
+    #         # self.ui.frame_android_game.setStyleSheet(
+    #         #     "background:rgb(91,90,90)")
 
-        elif page == "page_clean":
-            self.ui.stackedWidget_android.setCurrentWidget(
-                self.ui.page_android_clean)
-            self.ui.lab_tab.setText("Android > Clean")
-            # self.ui.frame_android_clean.setStyleSheet(
-            #     "background:rgb(91,90,90)")
+    #     elif page == "page_clean":
+    #         self.ui.stackedWidget_android.setCurrentWidget(
+    #             self.ui.page_android_clean)
+    #         self.ui.lab_tab.setText("Android > Clean")
+    #         # self.ui.frame_android_clean.setStyleSheet(
+    #         #     "background:rgb(91,90,90)")
 
-        elif page == "page_world":
-            self.ui.stackedWidget_android.setCurrentWidget(
-                self.ui.page_android_world)
-            self.ui.lab_tab.setText("Android > World")
-            # self.ui.frame_android_world.setStyleSheet(
-            #     "background:rgb(91,90,90)")
+    #     elif page == "page_world":
+    #         self.ui.stackedWidget_android.setCurrentWidget(
+    #             self.ui.page_android_world)
+    #         self.ui.lab_tab.setText("Android > World")
+    #         # self.ui.frame_android_world.setStyleSheet(
+    #         #     "background:rgb(91,90,90)")
