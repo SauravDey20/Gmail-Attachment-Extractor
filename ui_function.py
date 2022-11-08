@@ -246,11 +246,11 @@ class UIFunction(MainWindow):
         global clicked
 
         if(clicked==0):
-            lambda: self.ui.label_13.setText(filters(
+            self.ui.label_13.setText(filters(
                 self.ui.email_from.text(),
                 self.ui.to.text(),
-                self.ui.date_upto.text(),
                 self.ui.date_from.text(),
+                self.ui.date_upto.text(),
                 self.ui.subject.text(), 
                 self.ui.has_words.text(), 
                 self.ui.doesnt_have.text(),

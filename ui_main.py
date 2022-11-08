@@ -955,6 +955,11 @@ class Ui_MainWindow(object):
         self.upcoming.setGeometry(QRect(510, 150, 151, 20))
         self.upcoming.setStyleSheet(u"color: rgb(255, 255, 255);\n"
 "font: 10pt \"Arial\";")
+        self.label_13 = QLabel(self.frame_3)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setGeometry(QRect(530, 480, 401, 51))
+        self.label_13.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 10pt \"Arial\";")
 
         self.verticalLayout_10.addWidget(self.frame_3)
 
@@ -1162,6 +1167,7 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Has Words:", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Doesn't Have:", None))
         self.upcoming.setText(QCoreApplication.translate("MainWindow", u"Upcoming Mails", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.lab_gamepad.setText(QCoreApplication.translate("MainWindow", u"GamePad", None))
         self.lab_tab.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
 #if QT_CONFIG(tooltip)

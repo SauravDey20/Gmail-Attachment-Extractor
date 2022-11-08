@@ -2358,6 +2358,23 @@ font: 10pt &quot;Arial&quot;;</string>
                          <string>Upcoming Mails</string>
                         </property>
                        </widget>
+                       <widget class="QLabel" name="label_13">
+                        <property name="geometry">
+                         <rect>
+                          <x>530</x>
+                          <y>480</y>
+                          <width>401</width>
+                          <height>51</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Arial&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>TextLabel</string>
+                        </property>
+                       </widget>
                       </widget>
                      </item>
                     </layout>

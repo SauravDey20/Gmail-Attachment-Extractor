@@ -222,19 +222,24 @@ def filters(email_from, email_to, date_from_, date_to_, subject, has_words, does
     if(gdStatus):
         service_drive = Construct_service('drive')
 
-    if(read and unread==0):  query_string += "is:read"
-    elif(unread and read==0): query_string += "is:unread"
+    if(read and unread==0):  query_string += "is:read "
+    elif(unread and read==0): query_string += "is:unread "
     else: pass
 
-    query_string += " from:" + email_from + " to:" + email_to + " subject:" + subject + " " + has_words + " -{" + doesnt +"}" + " has:attachment "
+    if(email_from!=""):
+        query_string += "from:" + email_from + " "
+    if(email_to!=""):
+        query_string += "to:" + email_to + " "
+    if(subject!=""):
+        query_string += "subject:" +subject+ " " + has_words + " -{" + doesnt +"} " + "has:attachment "
     
     (date_from, month_from, year_from, hour_from, minute_from, sec_from) = split_datetime(date_from_)
     (date_to, month_to, year_to, hour_to, minute_to, sec_to) = split_datetime(date_to_)
 
-    date_from_sec = ((datetime.datetime(year_from, month_from, date_from, hour_from, minute_from)-datetime.datetime(1970,1,1)).total_seconds()) - 5400
-    date_to_sec =  ((datetime.datetime(year_to, month_to, date_to, hour_to, minute_to)-datetime.datetime(1970,1,1)).total_seconds()) - 5400
+    date_from_sec = ((datetime.datetime(year_from, month_from, date_from, hour_from, minute_from)-datetime.datetime(1970,1,1)).total_seconds()) - 48600
+    date_to_sec =  ((datetime.datetime(year_to, month_to, date_to, hour_to, minute_to)-datetime.datetime(1970,1,1)).total_seconds()) - 48600
 
-    query_string+=" after:"+date_from_sec+" before:"+date_to_sec
+    query_string+=" after:"+str(int(date_from_sec))+" before:"+str(int(date_to_sec))
     print(query_string)
     return query_string
 
