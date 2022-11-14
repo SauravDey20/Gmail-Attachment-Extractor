@@ -1,22 +1,15 @@
 from asyncio.windows_events import NULL
 from concurrent.futures import thread
 from pickle import NONE
-from main import *  # IMPORTING THE MAIN.PY FILE
-
+from main import * 
 from about import *
-
 import os
-import base64
 from typing import List
-import time
 from google_apis import create_service
-
-import sys
 import threading as td
-
-import shutil
-
 from core_functions import *
+from PyQt5 import QtWidgets
+import PySide2
 
 GLOBAL_STATE = 0  # NECESSERY FOR CHECKING WEATHER THE WINDWO IS FULL SCREEN OR NOT
 # NECESSERY FOR CHECKING WEATHER THE WINDWO IS FULL SCREEN OR NOT
@@ -30,7 +23,7 @@ init = False  # NECRESSERY FOR INITITTION OF THE WINDOW.
 
 login_status = 0
 clicked = 0
-
+arr = []
 def check_path(wokring_dir, token_dir):
     global login_status
     while os.path.exists(os.path.join(wokring_dir, token_dir)):
@@ -39,20 +32,23 @@ def check_path(wokring_dir, token_dir):
     login_status = 0
 
 
+
 t = td.Thread(target=check_path, args=(os.getcwd(), 'token files'))
-t.start()
-
-
+if not t.is_alive():t.start()
 
 
 class UIFunction(MainWindow):
 
     def __init__(self):
         self.trd = None
+        
+
     def initStackTab(self):
         print("hello")
 
         global init
+        
+        
 
         if not login_status:
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
@@ -94,40 +90,6 @@ class UIFunction(MainWindow):
         global GLOBAL_STATE
         GLOBAL_STATE = status
 
-    # ------> TOODLE MENU FUNCTION
-
-    # def toodleMenu(self, maxWidth, clicked):
-
-    #     #------> THIS LINE CLEARS THE BG OF PREVIOUS TABS : I.E. MAKING THEN NORMAL COLOR THAN LIGHTER COLOR.
-    #     for each in self.ui.frame_bottom_west.findChildren(QFrame):
-    #         each.setStyleSheet("background:rgb(51,51,51)")
-
-    #     t = td.Thread(target=check_path, args=(os.getcwd(), 'token files'))
-    #     print("f")
-    #     t.start()
-
-    #     t1 = td.Thread(target = UIFunction.check_status(self))
-    #     t1.start()
-
-    #     if clicked:
-    #         currentWidth = self.ui.frame_bottom_west.width() #Reads the current width of the frame
-    #         minWidth = 80 #MINIMUN WITDTH OF THE BOTTOM_WEST FRAME
-
-    #         # if not login_status:
-    #         #     self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-    #         #     self.ui.lab_tab.setText("Home")
-    #         #     self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
-    #         # else:
-    #         #     self.ui.stackedWidget.setCurrentWidget(self.ui.home_after_login)
-    #         #     self.ui.lab_tab.setText("Home After Login")
-    #         #     self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
-
-    #         self.animation = QPropertyAnimation(self.ui.frame_bottom_west, b"minimumWidth")
-    #         self.animation.setDuration(300)
-    #         self.animation.setStartValue(minWidth)
-    #         self.animation.setEndValue(minWidth)
-    #         self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
-    #         self.animation.start()
 
     def constantFunction(self):
         def maxDoubleClick(stateMouse):
@@ -163,28 +125,8 @@ class UIFunction(MainWindow):
             each.setStyleSheet("background:rgb(51,51,51)")
 
         if buttonName == 'bn_home':
-            # t = td.Thread(target=check_path, args=(os.getcwd(), 'token files'))
-            # print("F")
-            # t.start()
             print("F", login_status)
-
-            # if not login_status:
-            #     self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-            #     self.ui.lab_tab.setText("Home")
-            #     self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
-            # else:
-            #     self.ui.stackedWidget.setCurrentWidget(self.ui.home_after_login)
-            #     self.ui.lab_tab.setText("Home After Login")
-            #     self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
-
             UIFunction.initStackTab(self)
-
-            # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-
-            # elif self.ui.frame_bottom_west.width()==160  and index!=1:  # ABOUT PAGE STACKED WIDGET
-            #     self.ui.stackedWidget.setCurrentWidget(self.ui.home_after_login)
-            #     self.ui.lab_tab.setText("About > Home")
-            #     self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
         elif buttonName == 'bn_bug':
             if self.ui.frame_bottom_west.width() == 80 and index != 5:
@@ -220,7 +162,10 @@ class UIFunction(MainWindow):
         elif buttonName == 'bn_cloud':
             if self.ui.frame_bottom_west.width() == 80 and index != 6:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_cloud)
-                self.ui.lab_tab.setText("Cloud")
+                self.ui.download_table.setColumnWidth(0, 350)
+                self.ui.download_table.setColumnWidth(1, 350)
+                self.ui.download_table.setColumnWidth(2, 350)
+                UIFunction.loaddata(self)
                 # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
                 self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)")
 
@@ -231,17 +176,22 @@ class UIFunction(MainWindow):
                 # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
                 self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)")
 
-    # def getFilters(self):
-    #     print(self.ui.email_from.text())
-    #     print(self.ui.domain.text())
-    #     print(self.ui.date.text())
-    #     print(self.ui.unread.isChecked())
 
-    # def isChecked(self):
-    #     print(self.ui.unread.isChecked())
-    # def clickChooseDirectory(self):
-    #     x = choose_directory()
-    #     self.ui.label_8.setText(x)
+    def loaddata(self):
+        global arr
+        # arr = [{"From":"Amogh", "File Name":"abcd", "location":"defg"}, {"From":"Rahul", "File Name":"xyz", "location":"bdsm"}]
+        arr.append(get_data())
+        print(arr)
+        row = 0
+        self.ui.download_table.setRowCount(len(arr))
+        for item in arr:
+            print("In UI Function:", item)
+            self.ui.download_table.setItem(row, 0, PySide2.QtWidgets.QTableWidgetItem(item[0]))
+            self.ui.download_table.setItem(row, 1, PySide2.QtWidgets.QTableWidgetItem(str(item[1])))
+            self.ui.download_table.setItem(row, 2, PySide2.QtWidgets.QTableWidgetItem("Null"))
+            row=row+1
+
+
     def control(self):
         global clicked
 
@@ -275,20 +225,27 @@ class UIFunction(MainWindow):
 
         print("clicked: ", clicked)
 
+    def logout_(self):
+        logout()
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_home),
+        self.ui.lab_tab.setText("Home"),
+        self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
+
+    def login_(self):
+        x = login()
+
+    def directory(self):
+        self.ui.label_8.setText(choose_directory())
+        if(self.ui.label_8.text()!=""): self.ui.save_attach.setEnabled(1)
 
     def stackPage(self):
 
         self.ui.lab_home_main_hed.setText("About the Application")
+        self.ui.loginButton.clicked.connect(lambda: UIFunction.login_(self))
 
-        # self.ui.loginButton.clicked.connect(lambda: APFunction.login(self))
-
-        # self.ui.logout.clicked.connect(lambda: APFunction.logout(self))
-
-        self.ui.loginButton.clicked.connect(lambda: login())
-
-        self.ui.logout.clicked.connect(lambda: logout())
-
-        #self.ui.bn_bug_start.clicked.connect(lambda: APFunction.addNumbers(self, self.ui.comboBox_bug.currentText(), True))
+        self.ui.logout.clicked.connect(
+            lambda: UIFunction.logout_(self)
+            )
 
         self.ui.save_attach.clicked.connect(
             lambda: UIFunction.control(self) 
@@ -297,89 +254,5 @@ class UIFunction(MainWindow):
 
         self.ui.choose_directory.clicked.connect(
             # lambda: UIFunction.clickChooseDirectory(self)
-            lambda: self.ui.label_8.setText(choose_directory())
+            lambda: UIFunction.directory(self)
             )
-
-        # self.ui.applyFilters.clicked.connect(
-        #     lambda: self.ui.label_9.setText(filters(
-        #         self.ui.email_from.text(),
-        #         self.ui.to.text(),
-        #         self.ui.date_from.text(),
-        #         self.ui.unread.isChecked(), 
-        #         self.ui.localStorage.isChecked(), 
-        #         self.ui.gDrive.isChecked()
-        #     ))
-        # )
-
-        # self.ui.bn_cloud_connect.clicked.connect(
-        #     lambda: APFunction.cloudConnect(self))
-        # #self.ui.bn_cloud_clear.clicked.connect(lambda: self.dialogexec("Warning", "Do you want to save the file", "icons/1x/errorAsset 55.png", "Cancel", "Save"))
-        # self.ui.bn_cloud_clear.clicked.connect(
-        #     lambda: APFunction.cloudClear(self))
-
-        # self.ui.bn_android_contact.clicked.connect(
-        #     lambda: UIFunction.androidStackPages(self, "page_contact"))
-        # self.ui.bn_android_game.clicked.connect(
-        #     lambda: UIFunction.androidStackPages(self, "page_game"))
-        # self.ui.bn_android_clean.clicked.connect(
-        #     lambda: UIFunction.androidStackPages(self, "page_clean"))
-        # self.ui.bn_android_world.clicked.connect(
-        #     lambda: UIFunction.androidStackPages(self, "page_world"))
-
-        # self.ui.new_downloads.clicked.connect(
-        #     lambda: UIFunction.androidStackPages(self, "page_contact"))
-        # self.ui.old_downloads.clicked.connect(
-        #     lambda: UIFunction.androidStackPages(self, "page_game"))
-
-
-        # self.ui.bn_android_clean.clicked.connect(
-        #     lambda: UIFunction.androidStackPages(self, "page_clean"))
-        # self.ui.bn_android_world.clicked.connect(
-        #     lambda: UIFunction.androidStackPages(self, "page_world"))
-
-        # self.ui.bn_android_contact_edit.clicked.connect(
-        #     lambda: APFunction.editable(self))
-
-        # self.ui.bn_android_contact_save.clicked.connect(
-        #     lambda: APFunction.saveContact(self))
-
-
-        
-
-        ##########PAGE: ABOUT HOME #############
-        # self.ui.text_about_home.setVerticalScrollBar(self.ui.vsb_about_home)
-        # self.ui.text_about_home.setText(aboutHome)
-
-
-    
-    # def androidStackPages(self, page):
-    #     for each in self.ui.frame_download_menu.findChildren(QFrame):
-    #         each.setStyleSheet("background:rgb(51,51,51)")
-
-    #     if page == "page_contact":
-    #         self.ui.stackedWidget_android.setCurrentWidget(
-    #             self.ui.page_new_download)
-    #         self.ui.lab_tab.setText("Android > Contact")
-    #         # self.ui.frame_android_contact.setStyleSheet(
-    #         #     "background:rgb(91,90,90)")
-
-    #     elif page == "page_game":
-    #         self.ui.stackedWidget_android.setCurrentWidget(
-    #             self.ui.page_android_game)
-    #         self.ui.lab_tab.setText("Android > GamePad")
-    #         # self.ui.frame_android_game.setStyleSheet(
-    #         #     "background:rgb(91,90,90)")
-
-    #     elif page == "page_clean":
-    #         self.ui.stackedWidget_android.setCurrentWidget(
-    #             self.ui.page_android_clean)
-    #         self.ui.lab_tab.setText("Android > Clean")
-    #         # self.ui.frame_android_clean.setStyleSheet(
-    #         #     "background:rgb(91,90,90)")
-
-    #     elif page == "page_world":
-    #         self.ui.stackedWidget_android.setCurrentWidget(
-    #             self.ui.page_android_world)
-    #         self.ui.lab_tab.setText("Android > World")
-    #         # self.ui.frame_android_world.setStyleSheet(
-    #         #     "background:rgb(91,90,90)")

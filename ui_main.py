@@ -559,17 +559,6 @@ class Ui_MainWindow(object):
         self.page_about_cloud.setStyleSheet(u"background:rgb(91,90,90);")
         self.horizontalLayout_29 = QHBoxLayout(self.page_about_cloud)
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
-        self.label_10 = QLabel(self.page_about_cloud)
-        self.label_10.setObjectName(u"label_10")
-        font2 = QFont()
-        font2.setFamily(u"Segoe UI")
-        font2.setPointSize(30)
-        self.label_10.setFont(font2)
-        self.label_10.setStyleSheet(u"color:rgb(255,255,255);")
-        self.label_10.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_29.addWidget(self.label_10)
-
         self.stackedWidget.addWidget(self.page_about_cloud)
         self.page_about_android = QWidget()
         self.page_about_android.setObjectName(u"page_about_android")
@@ -594,198 +583,23 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setSpacing(5)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_8.setContentsMargins(5, 5, 5, 5)
-        self.lab_cloud_main = QLabel(self.page_cloud)
-        self.lab_cloud_main.setObjectName(u"lab_cloud_main")
-        self.lab_cloud_main.setMinimumSize(QSize(0, 55))
-        self.lab_cloud_main.setMaximumSize(QSize(16777215, 55))
-        font3 = QFont()
-        font3.setFamily(u"Segoe UI")
-        font3.setPointSize(24)
-        self.lab_cloud_main.setFont(font3)
-        self.lab_cloud_main.setStyleSheet(u"QLabel {\n"
-"	color:rgb(255,255,255);\n"
-"}")
-
-        self.verticalLayout_8.addWidget(self.lab_cloud_main)
-
         self.frame_2 = QFrame(self.page_cloud)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setEnabled(True)
-        self.frame_2.setMinimumSize(QSize(0, 235))
-        self.frame_2.setMaximumSize(QSize(16777215, 235))
-        font4 = QFont()
-        font4.setFamily(u"Segoe UI")
-        font4.setPointSize(12)
-        self.frame_2.setFont(font4)
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
-        self.gridLayout_2 = QGridLayout(self.frame_2)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setHorizontalSpacing(5)
-        self.gridLayout_2.setVerticalSpacing(0)
-        self.gridLayout_2.setContentsMargins(5, 5, 5, 5)
-        self.label_2 = QLabel(self.frame_2)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(100, 0))
-        font5 = QFont()
-        font5.setFamily(u"Segoe UI")
-        font5.setPointSize(14)
-        self.label_2.setFont(font5)
-        self.label_2.setStyleSheet(u"color:rgb(255,255,255);")
-
-        self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
-
-        self.label_3 = QLabel(self.frame_2)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setMinimumSize(QSize(100, 0))
-        self.label_3.setFont(font5)
-        self.label_3.setStyleSheet(u"color:rgb(255,255,255);")
-
-        self.gridLayout_2.addWidget(self.label_3, 1, 0, 1, 1)
-
-        self.label_4 = QLabel(self.frame_2)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMinimumSize(QSize(100, 0))
-        self.label_4.setFont(font5)
-        self.label_4.setStyleSheet(u"color:rgb(255,255,255);")
-
-        self.gridLayout_2.addWidget(self.label_4, 2, 0, 1, 1)
-
-        self.line_cloud_proxy = QLineEdit(self.frame_2)
-        self.line_cloud_proxy.setObjectName(u"line_cloud_proxy")
-        self.line_cloud_proxy.setMinimumSize(QSize(400, 25))
-        self.line_cloud_proxy.setMaximumSize(QSize(500, 25))
-        self.line_cloud_proxy.setFont(font4)
-        self.line_cloud_proxy.setStyleSheet(u"QLineEdit {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(51,51,51);\n"
-"	border-radius:4px;\n"
-"	background:rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QLineEdit:disabled {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(112,112,112);\n"
-"	border-radius:4px;\n"
-"	background:rgb(112,112,112);\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.line_cloud_proxy, 2, 1, 1, 3)
-
-        self.line_cloud_id = QLineEdit(self.frame_2)
-        self.line_cloud_id.setObjectName(u"line_cloud_id")
-        self.line_cloud_id.setEnabled(True)
-        self.line_cloud_id.setMinimumSize(QSize(400, 25))
-        self.line_cloud_id.setMaximumSize(QSize(500, 25))
-        self.line_cloud_id.setFont(font4)
-        self.line_cloud_id.setStyleSheet(u"QLineEdit {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(51,51,51);\n"
-"	border-radius:4px;\n"
-"	background:rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QLineEdit:disabled {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(112,112,112);\n"
-"	border-radius:4px;\n"
-"	background:rgb(112,112,112);\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.line_cloud_id, 0, 1, 1, 3)
-
-        self.line_cloud_adress = QLineEdit(self.frame_2)
-        self.line_cloud_adress.setObjectName(u"line_cloud_adress")
-        self.line_cloud_adress.setMinimumSize(QSize(400, 25))
-        self.line_cloud_adress.setMaximumSize(QSize(500, 25))
-        self.line_cloud_adress.setFont(font4)
-        self.line_cloud_adress.setStyleSheet(u"QLineEdit {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(51,51,51);\n"
-"	border-radius:4px;\n"
-"	background:rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QLineEdit:disabled {\n"
-"	color:rgb(255,255,255);\n"
-"	border:2px solid rgb(112,112,112);\n"
-"	border-radius:4px;\n"
-"	background:rgb(112,112,112);\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.line_cloud_adress, 1, 1, 1, 3)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer_2, 1, 4, 1, 1)
-
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer_3, 3, 0, 1, 2)
-
-        self.bn_cloud_clear = QPushButton(self.frame_2)
-        self.bn_cloud_clear.setObjectName(u"bn_cloud_clear")
-        self.bn_cloud_clear.setEnabled(True)
-        self.bn_cloud_clear.setMinimumSize(QSize(69, 25))
-        self.bn_cloud_clear.setMaximumSize(QSize(69, 25))
-        self.bn_cloud_clear.setFont(font4)
-        self.bn_cloud_clear.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(51,51,51);\n"
-"	border-radius: 5px;	\n"
-"	color:rgb(255,255,255);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(0,143,150);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QPushButton:disabled {	\n"
-"	border-radius: 5px;	\n"
-"	border: 2px solid rgb(112,112,112);\n"
-"	background-color: rgb(112,112,112);\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.bn_cloud_clear, 3, 2, 1, 1)
-
-        self.bn_cloud_connect = QPushButton(self.frame_2)
-        self.bn_cloud_connect.setObjectName(u"bn_cloud_connect")
-        self.bn_cloud_connect.setMinimumSize(QSize(69, 25))
-        self.bn_cloud_connect.setMaximumSize(QSize(69, 25))
-        self.bn_cloud_connect.setFont(font4)
-        self.bn_cloud_connect.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(51,51,51);\n"
-"	border-radius: 5px;	\n"
-"	color:rgb(255,255,255);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(0,143,150);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	border: 2px solid rgb(0,143,150);\n"
-"	background-color: rgb(51,51,51);\n"
-"}\n"
-"\n"
-"QPushButton:disabled {	\n"
-"	border-radius: 5px;	\n"
-"	border: 2px solid rgb(112,112,112);\n"
-"	background-color: rgb(112,112,112);\n"
-"}")
-
-        self.gridLayout_2.addWidget(self.bn_cloud_connect, 3, 3, 1, 1)
-
+        self.download_table = QTableWidget(self.frame_2)
+        if (self.download_table.columnCount() < 3):
+            self.download_table.setColumnCount(3)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.download_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.download_table.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.download_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.download_table.setObjectName(u"download_table")
+        self.download_table.setGeometry(QRect(0, 0, 1011, 711))
 
         self.verticalLayout_8.addWidget(self.frame_2)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 162, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_8.addItem(self.verticalSpacer_2)
 
         self.stackedWidget.addWidget(self.page_cloud)
         self.page_download = QWidget()
@@ -838,6 +652,7 @@ class Ui_MainWindow(object):
 "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(141, 0, 131, 255), stop:1 rgba(255, 255, 255, 255))")
         self.save_attach = QPushButton(self.frame_3)
         self.save_attach.setObjectName(u"save_attach")
+        self.save_attach.setEnabled(False)
         self.save_attach.setGeometry(QRect(0, 560, 231, 61))
         self.save_attach.setAutoFillBackground(False)
         self.save_attach.setStyleSheet(u"background: rgb(85, 255, 0);\n"
@@ -975,7 +790,10 @@ class Ui_MainWindow(object):
         self.lab_gamepad.setObjectName(u"lab_gamepad")
         self.lab_gamepad.setMinimumSize(QSize(0, 55))
         self.lab_gamepad.setMaximumSize(QSize(16777215, 55))
-        self.lab_gamepad.setFont(font3)
+        font2 = QFont()
+        font2.setFamily(u"Segoe UI")
+        font2.setPointSize(24)
+        self.lab_gamepad.setFont(font2)
         self.lab_gamepad.setStyleSheet(u"color:rgb(255,255,255);")
 
         self.verticalLayout_11.addWidget(self.lab_gamepad)
@@ -991,7 +809,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.setContentsMargins(5, 0, 0, 0)
         self.textEdit_gamepad = QTextEdit(self.frame_textbar)
         self.textEdit_gamepad.setObjectName(u"textEdit_gamepad")
-        self.textEdit_gamepad.setFont(font4)
+        font3 = QFont()
+        font3.setFamily(u"Segoe UI")
+        font3.setPointSize(12)
+        self.textEdit_gamepad.setFont(font3)
         self.textEdit_gamepad.setStyleSheet(u"color:rgb(255,255,255);")
         self.textEdit_gamepad.setFrameShape(QFrame.NoFrame)
         self.textEdit_gamepad.setFrameShadow(QFrame.Plain)
@@ -1041,9 +862,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.frame_tab = QFrame(self.frame_low)
         self.frame_tab.setObjectName(u"frame_tab")
-        font6 = QFont()
-        font6.setFamily(u"Segoe UI")
-        self.frame_tab.setFont(font6)
+        font4 = QFont()
+        font4.setFamily(u"Segoe UI")
+        self.frame_tab.setFont(font4)
         self.frame_tab.setStyleSheet(u"background:rgb(51,51,51);")
         self.frame_tab.setFrameShape(QFrame.NoFrame)
         self.frame_tab.setFrameShadow(QFrame.Plain)
@@ -1053,10 +874,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.lab_tab = QLabel(self.frame_tab)
         self.lab_tab.setObjectName(u"lab_tab")
-        font7 = QFont()
-        font7.setFamily(u"Segoe UI Light")
-        font7.setPointSize(10)
-        self.lab_tab.setFont(font7)
+        font5 = QFont()
+        font5.setFamily(u"Segoe UI Light")
+        font5.setPointSize(10)
+        self.lab_tab.setFont(font5)
         self.lab_tab.setStyleSheet(u"background:rgb(24, 24, 24);")
 
         self.horizontalLayout_12.addWidget(self.lab_tab)
@@ -1142,13 +963,12 @@ class Ui_MainWindow(object):
         self.loginButton.setText(QCoreApplication.translate("MainWindow", u"Google Login", None))
         self.lab_about_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.logout.setText(QCoreApplication.translate("MainWindow", u"Click to Logout", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Empty", None))
-        self.lab_cloud_main.setText(QCoreApplication.translate("MainWindow", u"Cloud Connect", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Client ID :", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Server Adress :", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Proxy :", None))
-        self.bn_cloud_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
-        self.bn_cloud_connect.setText(QCoreApplication.translate("MainWindow", u"Connect", None))
+        ___qtablewidgetitem = self.download_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"From", None));
+        ___qtablewidgetitem1 = self.download_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"File Name", None));
+        ___qtablewidgetitem2 = self.download_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Download Location", None));
         self.gDrive.setText(QCoreApplication.translate("MainWindow", u"Upload to Google Drive", None))
         self.unread.setText(QCoreApplication.translate("MainWindow", u"Only Unread Mails", None))
         self.lab_Bug.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Extract Attachments</p></body></html>", None))
