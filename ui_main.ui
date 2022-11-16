@@ -1084,7 +1084,7 @@ QPushButton:pressed {
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>7</number>
+                <number>6</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="styleSheet">
@@ -1400,6 +1400,9 @@ font: 75 10pt &quot;Arial&quot;;</string>
                  </property>
                  <item>
                   <widget class="QFrame" name="frame_2">
+                   <property name="styleSheet">
+                    <string notr="true">background:rgb(24, 24, 24);</string>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
@@ -1414,6 +1417,9 @@ font: 75 10pt &quot;Arial&quot;;</string>
                       <width>1011</width>
                       <height>711</height>
                      </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(1, 175, 255);</string>
                     </property>
                     <column>
                      <property name="text">

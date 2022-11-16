@@ -585,6 +585,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setContentsMargins(5, 5, 5, 5)
         self.frame_2 = QFrame(self.page_cloud)
         self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"background:rgb(24, 24, 24);")
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.download_table = QTableWidget(self.frame_2)
@@ -598,6 +599,7 @@ class Ui_MainWindow(object):
         self.download_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.download_table.setObjectName(u"download_table")
         self.download_table.setGeometry(QRect(0, 0, 1011, 711))
+        self.download_table.setStyleSheet(u"color: rgb(1, 175, 255);")
 
         self.verticalLayout_8.addWidget(self.frame_2)
 
@@ -912,7 +914,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(6)
         self.stackedWidget_android.setCurrentIndex(0)
 
 

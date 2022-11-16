@@ -31,6 +31,7 @@ dname = os.getcwd()
 query_string = ""
 lsStatus = 0
 gdStatus = 0
+download = []
 
 conn1, conn2 = multiprocessing.Pipe()
 
@@ -128,6 +129,7 @@ def save_attachments():
     global status
     global service_mail
     global query_string
+    global download
     save_location = dname
     start_time = datetime.datetime.now()
     print(is_upcoming)
@@ -204,7 +206,8 @@ def save_attachments():
                                         print(
                                             f"File {file_name} is saved at {save_location}"
                                         )
-                                        conn2.send([file_name, save_location])
+                                        # conn2.send([file_name, save_location])
+                                        download.append([file_name, save_location])
 
                                 elif gdStatus:
                                     fh = io.BytesIO(attachment_content)
@@ -258,13 +261,19 @@ def save_attachments():
                             item["value"], messageId)
                     else:
                         MessageSubject = "(No Subject) ({0})".format(messageId)
+            
+            
             if gdStatus:
                 folder_id = create_folder_drive(
                     service_drive, MessageSubject)["id"]
+
+                    
             if "parts" in messageDetailPayload:
                 for msgPayload in messageDetailPayload["parts"]:
+                    
                     mime_type = msgPayload["mimeType"]
                     file_name = msgPayload["filename"]
+                    # from_name = msgPayload["headers"]
                     body = msgPayload["body"]
                     if "attachmentId" in body:
                         attachment_id = body["attachmentId"]
@@ -283,6 +292,7 @@ def save_attachments():
                                 print(
                                     f"File {file_name} is saved at {save_location}")
                                 conn2.send([file_name, save_location])
+                                download.append([file_name, save_location])
 
                         elif gdStatus:
                             fh = io.BytesIO(attachment_content)
@@ -316,12 +326,20 @@ def start_download(k, upcoming):
     is_upcoming = upcoming
     if service_mail == None:
         service_mail = Construct_service("gmail")
+    if upcoming:
+        upcoming = 1
+    else:
+        upcoming = 0
 
-    trd = td.Thread(target=save_attachments, args=())
+    trd = td.Thread(target=save_attachments)
     trd.start()
 
 def get_data():
-    return conn1.recv()
+    global download
+    # print("Core Functions", download)
+    # download.append(conn1.recv())
+    # print("In core functions", download)
+    return download
 
 def stop_download(k):
     global status

@@ -23,6 +23,7 @@ init = False  # NECRESSERY FOR INITITTION OF THE WINDOW.
 
 login_status = 0
 clicked = 0
+downloading = 0
 arr = []
 def check_path(wokring_dir, token_dir):
     global login_status
@@ -161,13 +162,14 @@ class UIFunction(MainWindow):
 
         elif buttonName == 'bn_cloud':
             if self.ui.frame_bottom_west.width() == 80 and index != 6:
+                print("In cloud")
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_cloud)
                 self.ui.download_table.setColumnWidth(0, 350)
                 self.ui.download_table.setColumnWidth(1, 350)
                 self.ui.download_table.setColumnWidth(2, 350)
-                UIFunction.loaddata(self)
+                
                 # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)")
+                self.ui.frame_cloud.setStyleSheet("background:rgb(24, 24, 24);")
 
             elif self.ui.frame_bottom_west.width() == 160 and index != 2:   # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(
@@ -179,22 +181,22 @@ class UIFunction(MainWindow):
 
     def loaddata(self):
         global arr
-        # arr = [{"From":"Amogh", "File Name":"abcd", "location":"defg"}, {"From":"Rahul", "File Name":"xyz", "location":"bdsm"}]
-        arr.append(get_data())
-        print(arr)
-        row = 0
-        self.ui.download_table.setRowCount(len(arr))
-        for item in arr:
-            print("In UI Function:", item)
-            self.ui.download_table.setItem(row, 0, PySide2.QtWidgets.QTableWidgetItem(item[0]))
-            self.ui.download_table.setItem(row, 1, PySide2.QtWidgets.QTableWidgetItem(str(item[1])))
-            self.ui.download_table.setItem(row, 2, PySide2.QtWidgets.QTableWidgetItem("Null"))
-            row=row+1
-
+        # arr.append(get_data())
+        global downloading
+        while downloading == 1:
+            arr = get_data()
+            row = 0
+            self.ui.download_table.setRowCount(len(arr))
+            for item in arr:
+                self.ui.download_table.setItem(row, 0, PySide2.QtWidgets.QTableWidgetItem(item[0]))
+                self.ui.download_table.setItem(row, 1, PySide2.QtWidgets.QTableWidgetItem(str(item[1])))
+                self.ui.download_table.setItem(row, 2, PySide2.QtWidgets.QTableWidgetItem("Null"))
+                row=row+1
+            time.sleep(1)
 
     def control(self):
         global clicked
-
+        global downloading
         if(clicked==0):
             self.ui.label_13.setText(filters(
                 self.ui.email_from.text(),
@@ -212,11 +214,15 @@ class UIFunction(MainWindow):
                 self.ui.gDrive.isChecked()
             ))
             start_download(1, self.ui.upcoming.isChecked())
+            downloading = 1
+            trd1 = td.Thread(target=UIFunction.loaddata, args=(self,))
+            trd1.start()
             self.ui.save_attach.setText('Stop Download')
             self.ui.save_attach.setStyleSheet('background: rgb(255, 0, 0);\nfont: 10pt "MS Shell Dlg 2";')
             self.ui.save_attach.setIcon(QtGui.QIcon("icons/1x/pause.png"))
         else:
             stop_download(0)
+            downloading = 0
             self.ui.save_attach.setText('Start Download')
             self.ui.save_attach.setStyleSheet('background: rgb(85, 255, 0); font: 75 10pt "MS Shell Dlg 2";')
             self.ui.save_attach.setIcon(QtGui.QIcon("icons/1x/play.png"))
