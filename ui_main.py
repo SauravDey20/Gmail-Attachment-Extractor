@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1102, 797)
+        MainWindow.resize(1102, 818)
         MainWindow.setMinimumSize(QSize(800, 550))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -36,42 +36,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.frame_toodle = QFrame(self.frame_top)
-        self.frame_toodle.setObjectName(u"frame_toodle")
-        self.frame_toodle.setMinimumSize(QSize(80, 55))
-        self.frame_toodle.setMaximumSize(QSize(80, 55))
-        self.frame_toodle.setStyleSheet(u"background:rgb(0,143,150);")
-        self.frame_toodle.setFrameShape(QFrame.NoFrame)
-        self.frame_toodle.setFrameShadow(QFrame.Plain)
-        self.horizontalLayout_3 = QHBoxLayout(self.frame_toodle)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.toodle = QPushButton(self.frame_toodle)
-        self.toodle.setObjectName(u"toodle")
-        self.toodle.setMinimumSize(QSize(80, 55))
-        self.toodle.setMaximumSize(QSize(80, 55))
-        self.toodle.setStyleSheet(u"QPushButton {\n"
-"	border: none;\n"
-"	background-color: rgba(0,0,0,0);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(0,178,178);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgba(0,0,0,0);\n"
-"}")
-        icon = QIcon()
-        icon.addFile(u"icons/1x/logo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.toodle.setIcon(icon)
-        self.toodle.setIconSize(QSize(22, 12))
-        self.toodle.setFlat(True)
-
-        self.horizontalLayout_3.addWidget(self.toodle)
-
-
-        self.horizontalLayout.addWidget(self.frame_toodle)
-
         self.frame_top_east = QFrame(self.frame_top)
         self.frame_top_east.setObjectName(u"frame_top_east")
         self.frame_top_east.setMaximumSize(QSize(16777215, 55))
@@ -122,28 +86,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.frame_user)
 
-        self.frame_person = QFrame(self.frame_top_east)
-        self.frame_person.setObjectName(u"frame_person")
-        self.frame_person.setMinimumSize(QSize(55, 55))
-        self.frame_person.setMaximumSize(QSize(55, 55))
-        self.frame_person.setFrameShape(QFrame.NoFrame)
-        self.frame_person.setFrameShadow(QFrame.Plain)
-        self.horizontalLayout_8 = QHBoxLayout(self.frame_person)
-        self.horizontalLayout_8.setSpacing(0)
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.lab_person = QLabel(self.frame_person)
-        self.lab_person.setObjectName(u"lab_person")
-        self.lab_person.setMaximumSize(QSize(55, 55))
-        self.lab_person.setPixmap(QPixmap(u"icons/1x/peple.png"))
-        self.lab_person.setScaledContents(False)
-        self.lab_person.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_8.addWidget(self.lab_person)
-
-
-        self.horizontalLayout_4.addWidget(self.frame_person)
-
         self.frame_min = QFrame(self.frame_top_east)
         self.frame_min.setObjectName(u"frame_min")
         self.frame_min.setMinimumSize(QSize(55, 55))
@@ -167,9 +109,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
-        icon1 = QIcon()
-        icon1.addFile(u"icons/1x/hideAsset 53.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_min.setIcon(icon1)
+        icon = QIcon()
+        icon.addFile(u"icons/1x/hideAsset 53.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.bn_min.setIcon(icon)
         self.bn_min.setIconSize(QSize(22, 22))
         self.bn_min.setFlat(True)
 
@@ -201,9 +143,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
-        icon2 = QIcon()
-        icon2.addFile(u"icons/1x/max.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_max.setIcon(icon2)
+        icon1 = QIcon()
+        icon1.addFile(u"icons/1x/max.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.bn_max.setIcon(icon1)
         self.bn_max.setIconSize(QSize(22, 22))
         self.bn_max.setFlat(True)
 
@@ -235,9 +177,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
-        icon3 = QIcon()
-        icon3.addFile(u"icons/1x/closeAsset 43.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_close.setIcon(icon3)
+        icon2 = QIcon()
+        icon2.addFile(u"icons/1x/closeAsset 43.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.bn_close.setIcon(icon2)
         self.bn_close.setIconSize(QSize(22, 22))
         self.bn_close.setFlat(True)
 
@@ -295,9 +237,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
-        icon4 = QIcon()
-        icon4.addFile(u"icons/1x/homeAsset 46.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_home.setIcon(icon4)
+        icon3 = QIcon()
+        icon3.addFile(u"icons/1x/homeAsset 46.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.bn_home.setIcon(icon3)
         self.bn_home.setIconSize(QSize(22, 22))
         self.bn_home.setFlat(True)
 
@@ -305,41 +247,6 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_3.addWidget(self.frame_home)
-
-        self.frame_bug = QFrame(self.frame_bottom_west)
-        self.frame_bug.setObjectName(u"frame_bug")
-        self.frame_bug.setMinimumSize(QSize(80, 55))
-        self.frame_bug.setMaximumSize(QSize(160, 55))
-        self.frame_bug.setFrameShape(QFrame.NoFrame)
-        self.frame_bug.setFrameShadow(QFrame.Plain)
-        self.horizontalLayout_16 = QHBoxLayout(self.frame_bug)
-        self.horizontalLayout_16.setSpacing(0)
-        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.bn_bug = QPushButton(self.frame_bug)
-        self.bn_bug.setObjectName(u"bn_bug")
-        self.bn_bug.setMinimumSize(QSize(80, 55))
-        self.bn_bug.setMaximumSize(QSize(160, 55))
-        self.bn_bug.setStyleSheet(u"QPushButton {\n"
-"	border: none;\n"
-"	background-color: rgba(0,0,0,0);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(91,90,90);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgba(0,0,0,0);\n"
-"}")
-        icon5 = QIcon()
-        icon5.addFile(u"icons/1x/bugAsset 47.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_bug.setIcon(icon5)
-        self.bn_bug.setIconSize(QSize(22, 22))
-        self.bn_bug.setFlat(True)
-
-        self.horizontalLayout_16.addWidget(self.bn_bug)
-
-
-        self.verticalLayout_3.addWidget(self.frame_bug)
 
         self.frame_cloud = QFrame(self.frame_bottom_west)
         self.frame_cloud.setObjectName(u"frame_cloud")
@@ -365,9 +272,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
-        icon6 = QIcon()
-        icon6.addFile(u"icons/1x/cloudAsset 48.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_cloud.setIcon(icon6)
+        icon4 = QIcon()
+        icon4.addFile(u"icons/1x/cloudAsset 48.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.bn_cloud.setIcon(icon4)
         self.bn_cloud.setIconSize(QSize(22, 12))
         self.bn_cloud.setFlat(True)
 
@@ -400,9 +307,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgba(0,0,0,0);\n"
 "}")
-        icon7 = QIcon()
-        icon7.addFile(u"icons/1x/smile2Asset 1.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.bn_android.setIcon(icon7)
+        icon5 = QIcon()
+        icon5.addFile(u"icons/1x/smile2Asset 1.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.bn_android.setIcon(icon5)
         self.bn_android.setIconSize(QSize(20, 22))
         self.bn_android.setFlat(True)
 
@@ -413,6 +320,7 @@ class Ui_MainWindow(object):
 
         self.frame_8 = QFrame(self.frame_bottom_west)
         self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setStyleSheet(u"color:rgb(255,255,255);")
         self.frame_8.setFrameShape(QFrame.NoFrame)
         self.frame_8.setFrameShadow(QFrame.Plain)
         self.verticalLayout_4 = QVBoxLayout(self.frame_8)
@@ -533,25 +441,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13.addWidget(self.lab_about_home)
 
-        self.frame_about_home = QFrame(self.home_after_login)
-        self.frame_about_home.setObjectName(u"frame_about_home")
-        self.frame_about_home.setStyleSheet(u"background:rgb(24, 24, 24);")
-        self.frame_about_home.setFrameShape(QFrame.StyledPanel)
-        self.frame_about_home.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_28 = QHBoxLayout(self.frame_about_home)
-        self.horizontalLayout_28.setSpacing(0)
-        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
-        self.horizontalLayout_28.setContentsMargins(5, 5, 0, 5)
-        self.logout = QPushButton(self.frame_about_home)
+        self.frame_4 = QFrame(self.home_after_login)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.logout = QPushButton(self.frame_4)
         self.logout.setObjectName(u"logout")
+        self.logout.setGeometry(QRect(400, 440, 221, 51))
         self.logout.setStyleSheet(u"background: qlineargradient(spread:pad, x1:1, y1:0.023, x2:1, y2:0, stop:0 rgba(220, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "color: rgb(0, 0, 0);\n"
 "font: 75 10pt \"Arial\";")
 
-        self.horizontalLayout_28.addWidget(self.logout)
-
-
-        self.verticalLayout_13.addWidget(self.frame_about_home)
+        self.verticalLayout_13.addWidget(self.frame_4)
 
         self.stackedWidget.addWidget(self.home_after_login)
         self.page_about_cloud = QWidget()
@@ -598,7 +499,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem2 = QTableWidgetItem()
         self.download_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.download_table.setObjectName(u"download_table")
-        self.download_table.setGeometry(QRect(0, 0, 1011, 711))
+        self.download_table.setGeometry(QRect(0, 0, 1011, 731))
         self.download_table.setStyleSheet(u"color: rgb(1, 175, 255);")
 
         self.verticalLayout_8.addWidget(self.frame_2)
@@ -659,9 +560,9 @@ class Ui_MainWindow(object):
         self.save_attach.setAutoFillBackground(False)
         self.save_attach.setStyleSheet(u"background: rgb(85, 255, 0);\n"
 "font: 75 10pt \"MS Shell Dlg 2\";")
-        icon8 = QIcon()
-        icon8.addFile(u"icons/1x/play.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.save_attach.setIcon(icon8)
+        icon6 = QIcon()
+        icon6.addFile(u"icons/1x/play.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.save_attach.setIcon(icon6)
         self.localStorage = QCheckBox(self.frame_3)
         self.localStorage.setObjectName(u"localStorage")
         self.localStorage.setGeometry(QRect(0, 410, 231, 20))
@@ -914,8 +815,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(6)
-        self.stackedWidget_android.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget_android.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -923,10 +824,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.toodle.setText("")
         self.lab_appname.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
         self.lab_user.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">User8455</span></p></body></html>", None))
-        self.lab_person.setText("")
 #if QT_CONFIG(tooltip)
         self.bn_min.setToolTip(QCoreApplication.translate("MainWindow", u"Minimize", None))
 #endif // QT_CONFIG(tooltip)
@@ -943,10 +842,6 @@ class Ui_MainWindow(object):
         self.bn_home.setToolTip(QCoreApplication.translate("MainWindow", u"Home", None))
 #endif // QT_CONFIG(tooltip)
         self.bn_home.setText("")
-#if QT_CONFIG(tooltip)
-        self.bn_bug.setToolTip(QCoreApplication.translate("MainWindow", u"Bug", None))
-#endif // QT_CONFIG(tooltip)
-        self.bn_bug.setText("")
 #if QT_CONFIG(tooltip)
         self.bn_cloud.setToolTip(QCoreApplication.translate("MainWindow", u"Cloud", None))
 #endif // QT_CONFIG(tooltip)

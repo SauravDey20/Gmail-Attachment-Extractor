@@ -11,20 +11,15 @@ from core_functions import *
 from PyQt5 import QtWidgets
 import PySide2
 
-GLOBAL_STATE = 0  # NECESSERY FOR CHECKING WEATHER THE WINDWO IS FULL SCREEN OR NOT
-# NECESSERY FOR CHECKING WEATHER THE WINDWO IS FULL SCREEN OR NOT
+GLOBAL_STATE = 0  
 GLOBAL_TITLE_BAR = True
-init = False  # NECRESSERY FOR INITITTION OF THE WINDOW.
-
-# tab_Buttons = ['bn_home', 'bn_bug', 'bn_android', 'bn_cloud'] #BUTTONS IN MAIN TAB
-# android_buttons = ['bn_android_contact', 'bn_android_game', 'bn_android_clean', 'bn_android_world'] #BUTTONS IN ANDROID STACKPAGE
-
-# THIS CLASS HOUSES ALL FUNCTION NECESSERY FOR OUR PROGRAMME TO RUN.
+init = False  
 
 login_status = 0
 clicked = 0
 downloading = 0
 arr = []
+
 def check_path(wokring_dir, token_dir):
     global login_status
     while os.path.exists(os.path.join(wokring_dir, token_dir)):
@@ -48,18 +43,16 @@ class UIFunction(MainWindow):
         print("hello")
 
         global init
-        
-        
 
         if not login_status:
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
             self.ui.lab_tab.setText("Home")
-            self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
+            self.ui.frame_home.setStyleSheet("background:rgb(1, 175, 255);")
             init = True
         else:
             self.ui.stackedWidget.setCurrentWidget(self.ui.home_after_login)
             self.ui.lab_tab.setText("Home After Login")
-            self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
+            self.ui.frame_home.setStyleSheet("background:rgb(1, 175, 255);")
 
     def labelTitle(self, appName):
         self.ui.lab_appname.setText(appName)
@@ -129,19 +122,6 @@ class UIFunction(MainWindow):
             print("F", login_status)
             UIFunction.initStackTab(self)
 
-        elif buttonName == 'bn_bug':
-            if self.ui.frame_bottom_west.width() == 80 and index != 5:
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_bug)
-                self.ui.lab_tab.setText("Bug")
-                # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                self.ui.frame_bug.setStyleSheet("background:rgb(91,90,90)")
-
-            elif self.ui.frame_bottom_west.width() == 160 and index != 4:   # ABOUT PAGE STACKED WIDGET
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_bug)
-                self.ui.lab_tab.setText("About > Bug")
-                # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                self.ui.frame_bug.setStyleSheet("background:rgb(91,90,90)")
-
         elif buttonName == 'bn_android':
             if(login_status==0):
                 self.dialogexec("Warning", "Please Login to access this feature.", "icons/1x/errorAsset 55.png")
@@ -150,7 +130,7 @@ class UIFunction(MainWindow):
                     self.ui.stackedWidget.setCurrentWidget(self.ui.page_download)
                     self.ui.lab_tab.setText("Android")
                     # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                    self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
+                    self.ui.frame_android.setStyleSheet("background:rgb(1, 175, 255);")
                     # UIFunction.androidStackPages(self, "page_contact")
 
                 elif self.ui.frame_bottom_west.width() == 160 and index != 3:   # ABOUT PAGE STACKED WIDGET
@@ -158,7 +138,7 @@ class UIFunction(MainWindow):
                         self.ui.page_about_android)
                     self.ui.lab_tab.setText("About > Android")
                     # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                    self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)")
+                    self.ui.frame_android.setStyleSheet("background:rgb(1, 175, 255);")
 
         elif buttonName == 'bn_cloud':
             if self.ui.frame_bottom_west.width() == 80 and index != 6:
@@ -176,7 +156,7 @@ class UIFunction(MainWindow):
                     self.ui.page_about_cloud)
                 self.ui.lab_tab.setText("About > Cloud")
                 # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)")
+                self.ui.frame_cloud.setStyleSheet("background:rgb(1, 175, 255);")
 
 
     def loaddata(self):
@@ -235,7 +215,7 @@ class UIFunction(MainWindow):
         logout()
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_home),
         self.ui.lab_tab.setText("Home"),
-        self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
+        self.ui.frame_home.setStyleSheet("background:rgb(1, 175, 255);")
 
     def login_(self):
         x = login()
