@@ -815,8 +815,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
-        self.stackedWidget_android.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget_android.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
