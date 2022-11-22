@@ -4,8 +4,6 @@ from pickle import NONE
 from main import * 
 from about import *
 import os
-from typing import List
-from google_apis import create_service
 import threading as td
 from core_functions import *
 from PyQt5 import QtWidgets

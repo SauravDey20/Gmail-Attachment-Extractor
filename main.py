@@ -15,11 +15,9 @@ from ui_main import Ui_MainWindow
 
 from ui_dialog import Ui_Dialog
 
-from ui_error import Ui_Error 
-
 from ui_function import *
 
-from about import * 
+# from about import * 
 
 class GmailException(Exception):
 	"""gmail base exception class"""
@@ -61,38 +59,6 @@ class dialogUi(QDialog):
         pixmap = QtGui.QPixmap(icon)
         self.d.lab_icon.setPixmap(pixmap)
 
-class errorUi(QDialog):
-    def __init__(self, parent=None):
-
-        super(errorUi, self).__init__(parent)
-        self.e = Ui_Error()
-        self.e.setupUi(self)
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-
-        self.e.bn_ok.clicked.connect(lambda: self.close())
-
-
-        self.dragPos = self.pos()   
-        def moveWindow(event):
-          
-            if event.buttons() == Qt.LeftButton:
-                self.move(self.pos() + event.globalPos() - self.dragPos)
-                self.dragPos = event.globalPos()
-                event.accept()
-
-       
-        self.e.frame_top.mouseMoveEvent = moveWindow  
-      
-    def mousePressEvent(self, event):
-        self.dragPos = event.globalPos()
-
-    def errorConstrict(self, heading, icon, btnOk):
-        self.e.lab_heading.setText(heading)
-        self.e.bn_ok.setText(btnOk)
-        pixmap2 = QtGui.QPixmap(icon)
-        self.e.lab_icon.setPixmap(pixmap2)
-
 
 
 
@@ -113,7 +79,7 @@ class MainWindow(QMainWindow):
         self.ui.bn_cloud.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_cloud'))
         UIFunction.stackPage(self)
         self.diag = dialogUi()
-        self.error = errorUi()
+        # self.error = errorUi()
 
 
         self.dragPos = self.pos()
@@ -135,11 +101,6 @@ class MainWindow(QMainWindow):
     def dialogexec(self, heading, message, icon):
         dialogUi.dialogConstrict(self.diag, heading, message, icon)
         self.diag.exec_()
-    
-    def errorexec(self, heading, icon, btnOk):
-        errorUi.errorConstrict(self.error, heading, icon, btnOk)
-        self.error.exec_()
-   
 
 if __name__ == '__main__':
 
