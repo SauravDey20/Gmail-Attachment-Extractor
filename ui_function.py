@@ -2,7 +2,6 @@ from asyncio.windows_events import NULL
 from concurrent.futures import thread
 from pickle import NONE
 from main import * 
-from about import *
 import os
 import threading as td
 from core_functions import *

@@ -17,7 +17,6 @@ from ui_dialog import Ui_Dialog
 
 from ui_function import *
 
-# from about import * 
 
 class GmailException(Exception):
 	"""gmail base exception class"""
@@ -75,8 +74,8 @@ class MainWindow(QMainWindow):
         UIFunction.initStackTab(self)
         UIFunction.constantFunction(self)
         self.ui.bn_home.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_home'))
-        self.ui.bn_android.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_android'))
-        self.ui.bn_cloud.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_cloud'))
+        self.ui.bn_android.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_cloud'))
+        self.ui.bn_cloud.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_android'))
         UIFunction.stackPage(self)
         self.diag = dialogUi()
         # self.error = errorUi()
