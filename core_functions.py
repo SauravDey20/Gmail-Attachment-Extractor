@@ -125,125 +125,9 @@ def get_message_detail(
     return message_detail
 
 
-def save_attachments():
-    global status
-    global service_mail
-    global query_string
-    global download
-    save_location = dname
-    start_time = datetime.datetime.now()
-    print(is_upcoming)
-    if is_upcoming:
-        while status:
-            print(start_time)
-            date_from_sec = (
-                (
-                    datetime.datetime(
-                        start_time.year,
-                        start_time.month,
-                        start_time.day,
-                        start_time.hour,
-                        start_time.minute,
-                        start_time.second,
-                    )
-                    - datetime.datetime(1970, 1, 1)
-                ).total_seconds()
-            ) - 19803
-            query_string_m = query_string + "after:" + str(int(date_from_sec))
-            print(query_string_m)
-            email_messages = search_emails(service_mail, query_string_m)
-
-            start_time = datetime.datetime.now()
-            if email_messages is not None:
-                for email_message in email_messages:
-                    messageId = email_message["threadId"]
-
-                    messageDetail = get_message_detail(
-                        service_mail,
-                        email_message["id"],
-                        msg_format="full",
-                        metadata_headers=["parts"],
-                    )
-                    messageDetailPayload = messageDetail.get("payload")
-
-                    # Getting Subject of Mail
-                    for item in messageDetailPayload["headers"]:
-                        if item["name"] == "Subject":
-                            if item["value"]:
-                                MessageSubject = "{0} ({1})".format(
-                                    item["value"], messageId
-                                )
-                            else:
-                                MessageSubject = "(No Subject) ({0})".format(
-                                    messageId)
-
-                    if gdStatus:
-                        folder_id = create_folder_drive(service_drive, MessageSubject)[
-                            "id"
-                        ]
-
-                    if "parts" in messageDetailPayload:
-                        for msgPayload in messageDetailPayload["parts"]:
-                            mime_type = msgPayload["mimeType"]
-                            file_name = msgPayload["filename"]
-                            body = msgPayload["body"]
-                            if "attachmentId" in body:
-                                attachment_id = body["attachmentId"]
-                                attachment_content = get_file_data(
-                                    service_mail,
-                                    email_message["id"],
-                                    attachment_id,
-                                    file_name,
-                                    save_location,
-                                )
-
-                                if lsStatus:
-                                    with open(
-                                        os.path.join(
-                                            save_location, file_name), "wb"
-                                    ) as _f:
-                                        _f.write(attachment_content)
-                                        print(
-                                            f"File {file_name} is saved at {save_location}"
-                                        )
-                                        # conn2.send([file_name, save_location])
-                                        download.append([file_name, save_location])
-
-                                elif gdStatus:
-                                    fh = io.BytesIO(attachment_content)
-                                    file_metadata = {
-                                        "name": file_name,
-                                        "parents": [folder_id],
-                                    }
-
-                                    media_body = MediaIoBaseUpload(
-                                        fh,
-                                        mimetype=mime_type,
-                                        chunksize=1024 * 1024,
-                                        resumable=True,
-                                    )
-
-                                    file = (
-                                        service_drive.files()
-                                        .create(
-                                            body=file_metadata,
-                                            media_body=media_body,
-                                            fields="id",
-                                        )
-                                        .execute()
-                                    )
-
-                                    print(
-                                        f'Folder created with ID: "{file.get("id")}".'
-                                    )
-
-                    time.sleep(0.5)
-            time.sleep(2)
-
-    else:
-        print(query_string)
-        email_messages = search_emails(service_mail, query_string)
-
+def download_attachments(service_mail, query_string_m, save_location):
+    email_messages = search_emails(service_mail, query_string_m)
+    if email_messages is not None:
         for email_message in email_messages:
             messageId = email_message["threadId"]
             messageDetail = get_message_detail(
@@ -257,23 +141,15 @@ def save_attachments():
             for item in messageDetailPayload["headers"]:
                 if item["name"] == "Subject":
                     if item["value"]:
-                        MessageSubject = "{0} ({1})".format(
-                            item["value"], messageId)
+                        MessageSubject = "{0} ({1})".format(item["value"], messageId)
                     else:
                         MessageSubject = "(No Subject) ({0})".format(messageId)
-            
-            
             if gdStatus:
-                folder_id = create_folder_drive(
-                    service_drive, MessageSubject)["id"]
-
-                    
+                folder_id = create_folder_drive(service_drive, MessageSubject)["id"]
             if "parts" in messageDetailPayload:
                 for msgPayload in messageDetailPayload["parts"]:
-                    
                     mime_type = msgPayload["mimeType"]
                     file_name = msgPayload["filename"]
-                    # from_name = msgPayload["headers"]
                     body = msgPayload["body"]
                     if "attachmentId" in body:
                         attachment_id = body["attachmentId"]
@@ -289,15 +165,15 @@ def save_attachments():
                                 os.path.join(save_location, file_name), "wb"
                             ) as _f:
                                 _f.write(attachment_content)
-                                print(
-                                    f"File {file_name} is saved at {save_location}")
-                                conn2.send([file_name, save_location])
+                                print(f"File {file_name} is saved at {save_location}")
+                                # conn2.send([file_name, save_location])
                                 download.append([file_name, save_location])
-
                         elif gdStatus:
                             fh = io.BytesIO(attachment_content)
                             file_metadata = {
-                                "name": file_name, "parents": [folder_id]}
+                                "name": file_name,
+                                "parents": [folder_id],
+                            }
                             media_body = MediaIoBaseUpload(
                                 fh,
                                 mimetype=mime_type,
@@ -313,8 +189,46 @@ def save_attachments():
                                 )
                                 .execute()
                             )
-                            print(
-                                f'Folder created with ID: "{file.get("id")}".')
+                            print(f'Folder created with ID: "{file.get("id")}".')
+
+
+def save_attachments():
+    global status
+    global service_mail
+    global query_string
+    global download
+    save_location = dname
+
+    if is_upcoming:
+        start_time = datetime.datetime.now()
+        date_from_sec = (
+            (
+                datetime.datetime(
+                    start_time.year,
+                    start_time.month,
+                    start_time.day,
+                    start_time.hour,
+                    start_time.minute,
+                    start_time.second,
+                )
+                - datetime.datetime(1970, 1, 1)
+            ).total_seconds()
+        ) - 19800
+        while status:
+            date_from_sec += 1
+            query_string_m = (
+                query_string
+                + " after:"
+                + str(int(date_from_sec))
+                + " before:"
+                + str(int(date_from_sec))
+            )
+            print(query_string_m)
+            download_attachments(service_mail, query_string_m, save_location)
+            time.sleep(1)
+
+    else:
+        download_attachments(service_mail, query_string, save_location)
     return
 
 
@@ -334,12 +248,14 @@ def start_download(k, upcoming):
     trd = td.Thread(target=save_attachments)
     trd.start()
 
+
 def get_data():
     global download
     # print("Core Functions", download)
     # download.append(conn1.recv())
     # print("In core functions", download)
     return download
+
 
 def stop_download(k):
     global status
@@ -348,8 +264,7 @@ def stop_download(k):
 
 def choose_directory():
     global dname
-    dname = QFileDialog.getExistingDirectory(
-        None, caption="Select Download Location")
+    dname = QFileDialog.getExistingDirectory(None, caption="Select Download Location")
     return dname
 
 
@@ -442,16 +357,17 @@ def filters(
         ) - 48600
         query_string += "after:" + str(int(date_from_sec)) + " "
 
-    (date_to, month_to, year_to, hour_to,
-     minute_to, sec_to) = split_datetime(date_to_)
-    date_to_sec = (
-        (
-            datetime.datetime(year_to, month_to, date_to,
-                              hour_to, minute_to, sec_to)
-            - datetime.datetime(1970, 1, 1)
-        ).total_seconds()
-    ) - 48600
+        (date_to, month_to, year_to, hour_to, minute_to, sec_to) = split_datetime(
+            date_to_
+        )
+        date_to_sec = (
+            (
+                datetime.datetime(
+                    year_to, month_to, date_to, hour_to, minute_to, sec_to
+                )
+                - datetime.datetime(1970, 1, 1)
+            ).total_seconds()
+        ) - 48600
 
-    query_string += "before:" + str(int(date_to_sec))
-    print(query_string)
+        query_string += "before:" + str(int(date_to_sec))
     return query_string
