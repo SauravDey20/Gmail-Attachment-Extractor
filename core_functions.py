@@ -249,6 +249,7 @@ def start_download(k, upcoming):
     if not trd.is_alive: trd.start()
 
 
+
 def get_data():
     global download
     # print("Core Functions", download)
@@ -370,4 +371,5 @@ def filters(
         ) - 48600
 
         query_string += "before:" + str(int(date_to_sec))
+    
     return query_string
