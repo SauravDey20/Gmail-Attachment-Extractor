@@ -246,7 +246,7 @@ def start_download(k, upcoming):
         upcoming = 0
 
     trd = td.Thread(target=save_attachments)
-    if not trd.is_alive: trd.start()
+    trd.start()
 
 
 
