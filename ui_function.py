@@ -127,7 +127,7 @@ class UIFunction(MainWindow):
                     self.ui.stackedWidget.setCurrentWidget(self.ui.page_download)
                     self.ui.lab_tab.setText("Android")
                     # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                    self.ui.frame_android.setStyleSheet("background:rgb(1, 175, 255);")
+                    self.ui.frame_cloud.setStyleSheet("background:rgb(1, 175, 255);")
                     # UIFunction.androidStackPages(self, "page_contact")
 
                 elif self.ui.frame_bottom_west.width() == 160 and index != 3:   # ABOUT PAGE STACKED WIDGET
@@ -135,7 +135,7 @@ class UIFunction(MainWindow):
                         self.ui.page_about_android)
                     self.ui.lab_tab.setText("About > Android")
                     # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                    self.ui.frame_android.setStyleSheet("background:rgb(1, 175, 255);")
+                    self.ui.frame_cloud.setStyleSheet("background:rgb(1, 175, 255);")
 
         elif buttonName == 'bn_cloud':
             if self.ui.frame_bottom_west.width() == 80 and index != 6:
@@ -146,14 +146,14 @@ class UIFunction(MainWindow):
                 self.ui.download_table.setColumnWidth(2, 350)
                 
                 # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                self.ui.frame_cloud.setStyleSheet("background:rgb(24, 24, 24);")
+                self.ui.frame_android.setStyleSheet("background:rgb(1, 175, 255);")
 
             elif self.ui.frame_bottom_west.width() == 160 and index != 2:   # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(
                     self.ui.page_about_cloud)
                 self.ui.lab_tab.setText("About > Cloud")
                 # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                self.ui.frame_cloud.setStyleSheet("background:rgb(1, 175, 255);")
+                self.ui.frame_android.setStyleSheet("background:rgb(1, 175, 255);")
 
 
     def loaddata(self):

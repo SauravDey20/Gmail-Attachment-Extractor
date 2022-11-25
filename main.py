@@ -1,22 +1,12 @@
-import os
-import base64
-from typing import List
-import time
-from google_apis import create_service
-
 import sys
 
-from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PySide2 import QtCore, QtGui
+from PySide2.QtCore import Qt
 from PySide2.QtWidgets import *
 
 from ui_main import Ui_MainWindow 
 
 from ui_dialog import Ui_Dialog
-
-from ui_function import *
-
 
 class GmailException(Exception):
 	"""gmail base exception class"""
@@ -45,7 +35,7 @@ class dialogUi(QDialog):
                 self.dragPos = event.globalPos()
                 event.accept()
 
-        self.d.frame_top.mouseMoveEvent = movedialogWindow  
+        self.d.frame_top.mouseMoveEvent = movedialogWindow
 
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
@@ -67,6 +57,8 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        from ui_function import UIFunction
 
         applicationName = "Gmail Attachment Extractor"
         self.setWindowTitle(applicationName) 
