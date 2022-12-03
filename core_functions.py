@@ -138,8 +138,13 @@ def download_attachments(service_mail, query_string_m, save_location):
             )
             messageDetailPayload = messageDetail.get("payload")
             # Getting Subject of Mail
+            # print("\n\n")
+            # print(messageDetailPayload)
+            # print("\n\n")
+            # print(messageDetailPayload["headers"])
             for item in messageDetailPayload["headers"]:
-                if item["name"] == "Subject":
+                print(item)
+                if item["name"] == "From":
                     if item["value"]:
                         MessageSubject = "{0} ({1})".format(item["value"], messageId)
                     else:
@@ -167,7 +172,7 @@ def download_attachments(service_mail, query_string_m, save_location):
                                 _f.write(attachment_content)
                                 print(f"File {file_name} is saved at {save_location}")
                                 # conn2.send([file_name, save_location])
-                                download.append([file_name, save_location])
+                                download.append([file_name, save_location, MessageSubject])
                         elif gdStatus:
                             fh = io.BytesIO(attachment_content)
                             file_metadata = {
@@ -247,7 +252,6 @@ def start_download(k, upcoming):
 
     trd = td.Thread(target=save_attachments)
     trd.start()
-
 
 
 def get_data():
@@ -371,5 +375,5 @@ def filters(
         ) - 48600
 
         query_string += "before:" + str(int(date_to_sec))
-    
+    print(query_string)
     return query_string
